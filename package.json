@@ -1,0 +1,13 @@
+{
+  "name": "index-fara-frontiere",
+  "version": "1.0.0",
+  "description": "Index f\u0103r\u0103 frontiere \u2014 catalog of single-file HTML apps: the chiuta.github.io collection plus external resources.",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "test": "node tests/app.test.mjs && node tests/iffx.test.mjs"
+  },
+  "devDependencies": {
+    "playwright": "^1.48.0"
+  }
+}

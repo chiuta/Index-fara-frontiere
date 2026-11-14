@@ -1,0 +1,1762 @@
+<!DOCTYPE html>
+<html lang="ro" data-fff-hash="384203d50d8860a8a2a141db3c9267a0585f33330cb7c0d376c5788b3716814e">
+<head>
+<meta charset="UTF-8">
+<!--fff:kit:start v=1 modules=core,ux,label-->
+<meta name="fff-app" content="index-fara-frontiere">
+<meta name="fff-modules" content="core,ux,label">
+<style id="fff-style">/* fff-kit · stil comun (prefix fff-). Nu modifică stilul aplicației gazdă. */
+[data-fff-label]{cursor:pointer;text-decoration:underline dotted;text-underline-offset:3px}
+[data-fff-label]:focus-visible{outline:2px solid currentColor;outline-offset:2px;border-radius:3px}
+#app-version[data-fff-label]{box-sizing:border-box;min-height:24px;min-width:24px}
+#app-version[data-fff-label][data-fff-inl]{display:inline-flex;align-items:center;vertical-align:middle}
+#app-version[data-fff-label][data-fff-fs],#app-version[data-fff-label] [data-fff-fs]{font-size:12px!important}
+.fff-dlg{--_bg:var(--fff-bg,#fff);--_fg:var(--fff-fg,#1b1b1f);--_mut:var(--fff-muted,#4a4d57);--_line:var(--fff-line,#c4c7d0);--_btn:var(--fff-btn,#eef0f4);--_pri:var(--fff-accent,#0b57d0);--_prif:var(--fff-accent-fg,#fff);--_bad:var(--fff-bad,#b3261e);--_ok:var(--fff-ok,#146c2e);--_note:#fff1c9;--_notef:#3d2e00;
+  box-sizing:border-box;width:min(42rem,calc(100vw - 2rem));max-width:calc(100vw - 2rem);max-height:calc(100vh - 2rem);max-height:calc(100dvh - 2rem);margin:auto;padding:0;overflow:auto;
+  border:1px solid var(--_line);border-radius:12px;background:var(--_bg);color:var(--_fg);font:14px/1.5 var(--fff-font,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif);text-align:left;box-shadow:0 12px 40px rgba(0,0,0,.35)}
+.fff-dlg.fff-dark{--_bg:var(--fff-bg,#1e1f24);--_fg:var(--fff-fg,#ececf1);--_mut:var(--fff-muted,#b7bbc7);--_line:var(--fff-line,#4a4d57);--_btn:var(--fff-btn,#2c2e36);--_pri:var(--fff-accent,#a8c7fa);--_prif:var(--fff-accent-fg,#062e6f);--_bad:var(--fff-bad,#f2b8b5);--_ok:var(--fff-ok,#8fd9a0);--_note:#3b3118;--_notef:#f6e3a6;color-scheme:dark}
+@media (prefers-color-scheme:dark){.fff-dlg:not(.fff-light){--_bg:var(--fff-bg,#1e1f24);--_fg:var(--fff-fg,#ececf1);--_mut:var(--fff-muted,#b7bbc7);--_line:var(--fff-line,#4a4d57);--_btn:var(--fff-btn,#2c2e36);--_pri:var(--fff-accent,#a8c7fa);--_prif:var(--fff-accent-fg,#062e6f);--_bad:var(--fff-bad,#f2b8b5);--_ok:var(--fff-ok,#8fd9a0);--_note:#3b3118;--_notef:#f6e3a6;color-scheme:dark}}
+.fff-dlg::backdrop{background:rgba(0,0,0,.55)}
+.fff-dlg-sm{width:min(26rem,calc(100vw - 2rem))}
+.fff-dlg *,.fff-dlg *::before,.fff-dlg *::after{box-sizing:border-box}
+.fff-dlg .fff-in{padding:16px 20px 20px}
+.fff-dlg .fff-hd{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 0 8px}
+.fff-dlg h2{margin:0;font-family:inherit;font-size:1.25rem;font-weight:700;line-height:1.3;color:var(--_fg);letter-spacing:0;text-transform:none}
+.fff-dlg h3{margin:0 0 6px;font-family:inherit;font-size:1rem;font-weight:700;line-height:1.35;color:var(--_fg);letter-spacing:0;text-transform:none}
+.fff-dlg p{margin:0 0 8px;color:var(--_fg);font-size:inherit}
+.fff-dlg .fff-mut{color:var(--_mut)}
+.fff-dlg p.fff-mut{color:var(--_mut)}
+.fff-dlg .fff-sm{font-size:.85rem}
+.fff-dlg .fff-lead{font-size:1.05rem}
+.fff-dlg .fff-sec{border-top:1px solid var(--_line);padding-top:12px;margin-top:12px}
+.fff-dlg .fff-mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.85rem;overflow-wrap:anywhere}
+.fff-dlg .fff-break{word-break:break-all}
+.fff-dlg code{background:none;border:0;padding:0;color:inherit}
+.fff-dlg .fff-list{margin:0 0 8px;padding-left:1.2rem;list-style:disc}
+.fff-dlg .fff-list li{margin:2px 0;color:var(--_fg)}
+.fff-dlg .fff-cols{columns:2 14rem}
+.fff-dlg .fff-tbl{width:100%;table-layout:fixed;border-collapse:collapse;margin:0 0 8px}
+.fff-dlg .fff-tbl th,.fff-dlg .fff-tbl td{padding:3px 6px;border-bottom:1px solid var(--_line);text-align:left;vertical-align:top;color:var(--_fg)}
+.fff-dlg .fff-tbl th.fff-num,.fff-dlg .fff-tbl td.fff-num{text-align:right;width:6.5rem;white-space:nowrap}
+.fff-dlg .fff-sr{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.fff-dlg .fff-row{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 8px}
+.fff-dlg .fff-end{justify-content:flex-end}
+.fff-dlg .fff-btn{appearance:none;min-height:36px;min-width:36px;padding:6px 14px;border:1px solid var(--_line);border-radius:8px;background:var(--_btn);color:var(--_fg);font:inherit;font-weight:600;cursor:pointer;text-transform:none;letter-spacing:0;box-shadow:none}
+.fff-dlg .fff-btn:hover{border-color:var(--_fg)}
+.fff-dlg .fff-btn:focus-visible,.fff-dlg .fff-input:focus-visible,.fff-dlg summary:focus-visible,.fff-dlg .fff-pre:focus-visible{outline:2px solid var(--_fg);outline-offset:2px}
+.fff-dlg .fff-primary{background:var(--_pri);color:var(--_prif);border-color:transparent}
+.fff-dlg .fff-danger{background:var(--_bad);color:var(--_bg)}
+.fff-dlg .fff-danger-o{color:var(--_bad);border-color:var(--_bad)}
+.fff-dlg .fff-x{font-size:1.4rem;line-height:1;padding:2px 10px}
+.fff-dlg .fff-box{border:1px solid var(--_line);border-radius:8px;padding:10px;margin:0 0 8px}
+.fff-dlg [hidden]{display:none}
+.fff-dlg .fff-field{display:flex;flex-direction:column;gap:2px;margin:0 0 8px}
+.fff-dlg .fff-field label{font-weight:600}
+.fff-dlg .fff-input{width:100%;min-height:36px;padding:6px 10px;border:1px solid var(--_line);border-radius:6px;background:var(--_bg);color:var(--_fg);font:inherit}
+.fff-dlg .fff-note{background:var(--_note);color:var(--_notef);padding:8px 10px;border-radius:8px}
+.fff-dlg .fff-res{min-height:1.5em}
+.fff-dlg .fff-ok{color:var(--_ok);font-weight:600}
+.fff-dlg .fff-bad{color:var(--_bad);font-weight:600}
+.fff-dlg .fff-det{margin:0 0 8px}
+.fff-dlg .fff-det summary{cursor:pointer;font-weight:600;min-height:24px}
+.fff-dlg .fff-pre{margin:6px 0 0;padding:8px 10px;overflow:auto;white-space:pre-wrap;word-break:break-all;border:1px solid var(--_line);border-radius:6px;background:var(--_btn);color:var(--_fg)}
+.fff-dlg .fff-foot{border-top:1px solid var(--_line);margin-top:12px;padding-top:10px}
+.fff-dlg .fff-msg{font-size:1rem;margin-bottom:14px;white-space:pre-line;overflow-wrap:anywhere}
+.fff-chip{appearance:none;background:none;border:1px dotted currentColor;border-radius:6px;color:inherit;font:inherit;font-size:.85em;cursor:pointer;min-height:24px;min-width:24px;padding:0 8px}
+.fff-chip{font-size:max(12px,.85em)}
+.fff-chip:focus-visible{outline:2px solid currentColor;outline-offset:2px}
+@media (pointer:coarse){.fff-dlg .fff-btn,.fff-dlg .fff-input{min-height:44px}.fff-dlg .fff-btn{min-width:44px}.fff-dlg .fff-det summary{min-height:44px}}
+@media (prefers-reduced-motion:no-preference){.fff-dlg[open]{animation:fff-in .12s ease-out}@keyframes fff-in{from{transform:translateY(6px)}to{transform:none}}}
+@media (prefers-reduced-motion:reduce){.fff-dlg,.fff-dlg *{animation:none!important;transition:none!important}}
+.fff-dlg .fff-dt{margin:0 0 8px}
+.fff-dlg .fff-ta{resize:vertical;min-height:4.5em}
+.fff-dlg textarea.fff-input{font:inherit}
+.fff-toasts{--_tbg:var(--fff-toast-bg,#2b2d33);--_tfg:var(--fff-toast-fg,#f4f4f7);--_tac:var(--fff-toast-accent,#a8c7fa);
+  position:fixed;inset:auto 0 0 0;margin:0;padding:0 16px 16px;border:0;background:transparent;overflow:visible;z-index:2147483000;pointer-events:none;display:flex;flex-direction:column;align-items:center;gap:8px;font:14px/1.45 var(--fff-font,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif);color:var(--_tfg);box-sizing:border-box}
+.fff-toasts *{box-sizing:border-box}
+.fff-toast-reg{display:flex;flex-direction:column;align-items:center;gap:8px;width:100%}
+.fff-toast-reg:empty{display:none}
+.fff-toast{pointer-events:auto;display:flex;align-items:center;gap:10px;max-width:min(34rem,100%);padding:10px 12px 10px 14px;border-radius:10px;background:var(--_tbg);color:var(--_tfg);border:1px solid rgba(255,255,255,.18);border-left:6px solid #a8c7fa;box-shadow:0 6px 24px rgba(0,0,0,.4)}
+.fff-toast-success{border-left-color:#81c995}.fff-toast-warning{border-left-color:#fdd663}.fff-toast-error{border-left-color:#f28b82}
+.fff-toast-msg{flex:1 1 auto;min-width:0;overflow-wrap:anywhere;white-space:pre-line}
+.fff-toast .fff-sr{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.fff-toast .fff-btn{appearance:none;min-height:32px;min-width:32px;padding:2px 10px;border:1px solid rgba(255,255,255,.35);border-radius:8px;background:transparent;color:var(--_tac);font:inherit;font-weight:600;cursor:pointer}
+.fff-toast .fff-toast-x{font-size:1.3rem;line-height:1;color:var(--_tfg);padding:0 8px}
+.fff-toast .fff-btn:focus-visible{outline:2px solid var(--_tfg);outline-offset:2px}
+@media (pointer:coarse){.fff-toast .fff-btn{min-height:44px;min-width:44px}}
+@media (prefers-reduced-motion:no-preference){.fff-toast{animation:fff-tin .16s ease-out}@keyframes fff-tin{from{transform:translateY(8px);opacity:0}to{transform:none;opacity:1}}}
+@media (prefers-reduced-motion:reduce){.fff-toast{animation:none!important}}
+/* fff-kit · ux — confort la atingere. Specificitate 0 (:where) unde se poate: stilul propriu al aplicației are prioritate. */
+:where(:root:not([data-fff-ux="off"]) a, :root:not([data-fff-ux="off"]) button, :root:not([data-fff-ux="off"]) input, :root:not([data-fff-ux="off"]) select, :root:not([data-fff-ux="off"]) textarea, :root:not([data-fff-ux="off"]) summary, :root:not([data-fff-ux="off"]) label, :root:not([data-fff-ux="off"]) [role=button], :root:not([data-fff-ux="off"]) [role=tab], :root:not([data-fff-ux="off"]) [role=menuitem], :root:not([data-fff-ux="off"]) [role=switch], :root:not([data-fff-ux="off"]) [role=checkbox]){touch-action:manipulation}
+:where(:root:not([data-fff-ux="off"]) button, :root:not([data-fff-ux="off"]) [role=button], :root:not([data-fff-ux="off"]) [role=tab], :root:not([data-fff-ux="off"]) summary){-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+:where(html:not([data-fff-ux="off"])){scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+:where(:root:not([data-fff-ux="off"]) body){overflow-wrap:break-word}
+:where(:root:not([data-fff-ux="off"]) button:not(:disabled), :root:not([data-fff-ux="off"]) [role=button]){cursor:pointer}
+:where(:root:not([data-fff-ux="off"]) button, :root:not([data-fff-ux="off"]) [role=button], :root:not([data-fff-ux="off"]) summary, :root:not([data-fff-ux="off"]) [role=tab]):active:not(:disabled){filter:brightness(.92)}
+@media (prefers-reduced-motion:reduce){:where(html:not([data-fff-ux="off"])){scroll-behavior:auto}}
+@media (pointer:coarse){
+  /* ținte de atingere de cel puțin 44×44 px (WCAG 2.5.5 / Apple HIG); min-* nu strică înălțimile proprii mai mari */
+  :where(:root:not([data-fff-ux="off"]) button, :root:not([data-fff-ux="off"]) [role=button], :root:not([data-fff-ux="off"]) [role=tab], :root:not([data-fff-ux="off"]) [role=menuitem], :root:not([data-fff-ux="off"]) summary, :root:not([data-fff-ux="off"]) select, :root:not([data-fff-ux="off"]) textarea, :root:not([data-fff-ux="off"]) input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=hidden]):not([type=color]):not([type=file])){min-height:44px}
+  :where(:root:not([data-fff-ux="off"]) button, :root:not([data-fff-ux="off"]) [role=button], :root:not([data-fff-ux="off"]) [role=tab], :root:not([data-fff-ux="off"]) [role=menuitem]){min-width:44px}
+  :where(:root:not([data-fff-ux="off"]) input[type=checkbox], :root:not([data-fff-ux="off"]) input[type=radio]){min-width:22px;min-height:22px}
+  :where(:root:not([data-fff-ux="off"]) label:has(input[type=checkbox]), :root:not([data-fff-ux="off"]) label:has(input[type=radio])){min-height:44px;display:inline-flex;align-items:center;gap:.5em}
+  :root:not([data-fff-ux="off"]) [data-fff-hit]{display:inline-flex;align-items:center;min-height:44px;min-width:44px}
+  /* iOS mărește pagina la focus dacă textul câmpului e sub 16 px */
+  :root:not([data-fff-ux="off"]) input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=color]):not([type=file]):not([type=hidden]):not([data-fff-nouxfont]),:root:not([data-fff-ux="off"]) select:not([data-fff-nouxfont]),:root:not([data-fff-ux="off"]) textarea:not([data-fff-nouxfont]){font-size:max(16px,1em)}
+}</style>
+<script id="fff-kit">/* fff-kit 1.5.0 */
+/* ---- fff-kit/core ---- */
+/* fff-kit · core · v1.2.0 — fără rețea, fără dependențe. Definește window.FFF. */
+(function () {
+  'use strict';
+  /* anti-clickjacking: GitHub Pages nu trimite X-Frame-Options; dacă pagina e încadrată de o origine străină (sau într-un iframe sandbox),
+     conținutul aplicației e ascuns și apare doar un mesaj minimal tradus cu un link către pagină într-o fereastră nouă. */
+  function frameGuard() {
+    var M = {
+      ro: ['Această pagină nu poate fi încadrată în alt site.', 'Deschide-o într-o fereastră nouă'],
+      en: ['This page cannot be embedded in another site.', 'Open it in a new window'],
+      fr: ['Cette page ne peut pas être intégrée dans un autre site.', 'Ouvrez-la dans une nouvelle fenêtre'],
+      it: ['Questa pagina non può essere incorporata in un altro sito.', 'Aprila in una nuova finestra'],
+      es: ['Esta página no se puede incrustar en otro sitio.', 'Ábrela en una ventana nueva'],
+      pt: ['Esta página não pode ser incorporada noutro site.', 'Abra-a numa nova janela'],
+      hu: ['Ez az oldal nem ágyazható be másik webhelyre.', 'Nyisd meg új ablakban'],
+      de: ['Diese Seite kann nicht in eine andere Website eingebettet werden.', 'In einem neuen Fenster öffnen']
+    };
+    var d = document, de = d.documentElement;
+    var l = (de.getAttribute('lang') || '').slice(0, 2).toLowerCase();
+    if (!M[l]) l = ((navigator.languages && navigator.languages[0]) || navigator.language || '').slice(0, 2).toLowerCase();
+    var m = M[l] || M.en, box = null;
+    function hideKids(b) {
+      for (var i = 0; i < b.children.length; i++) if (b.children[i] !== box) b.children[i].style.setProperty('display', 'none', 'important');
+    }
+    function build() {
+      var b = d.body;
+      if (!b || box) return;
+      box = d.createElement('div');
+      box.setAttribute('data-fff-frameguard', '');
+      box.setAttribute('role', 'alert');
+      box.style.cssText = 'display:block;box-sizing:border-box;margin:0;padding:24px 16px;font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:#1b1b1f;background:#fff;text-align:center';
+      var p = d.createElement('p'); p.textContent = m[0]; p.style.cssText = 'margin:0 0 12px';
+      var a = d.createElement('a');
+      a.href = window.self.location.href; a.target = '_blank'; a.rel = 'noopener'; a.textContent = m[1];
+      a.style.cssText = 'color:#0b57d0;text-decoration:underline;font-weight:600';
+      box.appendChild(p); box.appendChild(a);
+      hideKids(b);
+      b.appendChild(box);
+      b.style.setProperty('display', 'block', 'important');
+      de.style.display = '';
+      if (window.MutationObserver) new MutationObserver(function () { hideKids(b); if (box.parentNode !== b) b.appendChild(box); }).observe(b, {childList: true});
+    }
+    if (d.readyState === 'loading') d.addEventListener('DOMContentLoaded', build); else build();
+  }
+  try {
+    if (window.top !== window.self) {
+      var __cross = false;
+      try { void window.top.location.href; } catch (e) { __cross = true; }
+      if (__cross) {
+        document.documentElement.style.display = 'none';   // ascuns până când mesajul e gata (nimic din aplicație nu rămâne vizibil)
+        try { window.top.location = window.self.location.href; } catch (e2) {}
+        try { frameGuard(); } catch (e4) {}
+      }
+    }
+  } catch (e3) {}
+  var KIT_VERSION = '1.5.0';
+  var F = (window.FFF = window.FFF || {});
+  if (F.core && F.core.version) return; // idempotent la dublă încărcare
+  var SUP = ['ro', 'en', 'fr', 'it', 'es', 'pt', 'hu', 'de'];
+  var doc = document;
+
+  /* ---------- clipboard sigur: refuzul de permisiune nu mai produce o excepție neprinsă ----------
+   * navigator.clipboard.writeText respinge cu NotAllowedError când pagina nu are focus sau permisiunea e refuzată.
+   * Încercăm întâi API-ul, apoi execCommand('copy'); dacă nici acesta nu merge, respingerea rămâne (apelantul o poate prinde),
+   * dar dacă nimeni n-o prinde, o marcăm ca tratată, ca pagina să rămână stabilă. */
+  try {
+    var cb = navigator.clipboard;
+    if (cb && typeof cb.writeText === 'function' && !cb.__fffSafe) {
+      var rawWrite = cb.writeText.bind(cb);
+      var legacyCopy = function (t) {
+        var ta = doc.createElement('textarea');
+        ta.value = String(t); ta.setAttribute('readonly', ''); ta.style.cssText = 'position:fixed;left:-9999px;top:0;opacity:0';
+        (doc.body || doc.documentElement).appendChild(ta); ta.select();
+        var ok = false; try { ok = doc.execCommand('copy'); } catch (e) { ok = false; }
+        ta.remove(); return ok;
+      };
+      cb.writeText = function (t) {
+        var p; try { p = rawWrite(t); } catch (e) { p = Promise.reject(e); }
+        return p.catch(function (err) { if (legacyCopy(t)) return; throw err; });
+      };
+      try { Object.defineProperty(cb, '__fffSafe', {value: true}); } catch (e) { cb.__fffSafe = true; }
+    }
+  } catch (e5) {}
+  window.addEventListener('unhandledrejection', function (ev) {
+    var r = ev && ev.reason;
+    if (r && (r.name === 'NotAllowedError' || r.name === 'SecurityError') && /clipboard|permission/i.test(String(r.message || ''))) ev.preventDefault();
+  });
+
+  /* ---------- meta / app ---------- */
+  function meta(name) {
+    var m = doc.querySelector('meta[name="' + name + '"]');
+    return m ? (m.getAttribute('content') || '') : '';
+  }
+  function guessSlug() {
+    var p = (location.pathname || '').split('/').filter(Boolean);
+    var s = p.length ? p[p.length - 1] : '';
+    if (/\.html?$/i.test(s)) s = p.length > 1 ? p[p.length - 2] : '';
+    s = s.toLowerCase().replace(/[^a-z0-9._-]+/g, '-').replace(/^-+|-+$/g, '');
+    return s || 'app';
+  }
+  var SLUG = (meta('fff-app') || '').trim() || guessSlug();
+  var DISABLED = (meta('fff-disable') || '').trim() || '';
+  function computeApp() {
+    return {slug: SLUG, name: doc.title || SLUG, version: meta('application-version'), updated: meta('last-updated')};
+  }
+  var appCache = null;
+  Object.defineProperty(F, 'app', {
+    enumerable: true, configurable: true,
+    get: function () {
+      if (doc.readyState === 'loading') return computeApp();
+      return appCache || (appCache = computeApp());
+    }
+  });
+
+  /* ---------- bus ---------- */
+  var L = {};
+  var bus = {
+    on: function (ev, fn) { (L[ev] = L[ev] || []).push(fn); return function () { bus.off(ev, fn); }; },
+    off: function (ev, fn) { if (L[ev]) L[ev] = L[ev].filter(function (f) { return f !== fn; }); },
+    once: function (ev, fn) { var off = bus.on(ev, function (d) { off(); fn(d); }); return off; },
+    emit: function (ev, data) {
+      (L[ev] || []).slice().forEach(function (f) { try { f(data); } catch (e) { if (window.console) console.error('[fff] bus', ev, e); } });
+    }
+  };
+  F.bus = bus;
+
+  /* ---------- i18n ---------- */
+  var I18N = (F._i18n = F._i18n || {});
+  var i18nLoaded = false;
+  function mergeLang(mod, obj) {
+    var d = (I18N[mod] = I18N[mod] || {});
+    for (var l in obj) if (Object.prototype.hasOwnProperty.call(obj, l)) {
+      d[l] = Object.assign(d[l] || {}, obj[l]);
+    }
+  }
+  function loadI18nJson() {
+    var el = doc.getElementById('fff-i18n');
+    if (!el) return;
+    i18nLoaded = true;
+    try {
+      var j = JSON.parse(el.textContent || '{}');
+      for (var m in j) if (Object.prototype.hasOwnProperty.call(j, m)) mergeLang(m, j[m]);
+    } catch (e) { if (window.console) console.error('[fff] i18n', e); }
+  }
+  F.registerI18n = function (mod, obj) { mergeLang(mod, obj || {}); };
+  function lsGetRaw(k) { try { return LS ? origGet.call(LS, k) : null; } catch (e) { return null; } }
+
+  var LS = null;
+  try { LS = window.localStorage; } catch (e) { LS = null; }
+  var P = window.Storage ? window.Storage.prototype : null;
+  var origGet = P && P.getItem, origSet = P && P.setItem, origRem = P && P.removeItem, origClr = P && P.clear;
+
+  F.lang = function () {
+    var l = (doc.documentElement.getAttribute('lang') || '').slice(0, 2).toLowerCase();
+    if (SUP.indexOf(l) >= 0) return l;
+    var ks = ['lang', 'language', 'locale'];
+    for (var i = 0; i < ks.length; i++) {
+      var v = lsGetRaw(ks[i]);
+      if (v) { v = String(v).replace(/^"|"$/g, '').slice(0, 2).toLowerCase(); if (SUP.indexOf(v) >= 0) return v; }
+    }
+    var n = ((navigator.languages && navigator.languages[0]) || navigator.language || '').slice(0, 2).toLowerCase();
+    return SUP.indexOf(n) >= 0 ? n : 'en';
+  };
+  var langObs = null, langFns = [];
+  F.onLang = function (fn) {
+    langFns.push(fn);
+    if (!langObs && window.MutationObserver) {
+      var last = F.lang();
+      langObs = new MutationObserver(function () {
+        var now = F.lang();
+        if (now === last) return;
+        last = now;
+        langFns.slice().forEach(function (f) { try { f(now); } catch (e) { if (window.console) console.error(e); } });
+        bus.emit('lang', now);
+      });
+      langObs.observe(doc.documentElement, {attributes: true, attributeFilter: ['lang']});
+    }
+    return function () { langFns = langFns.filter(function (f) { return f !== fn; }); };
+  };
+  F.t = function (mod, key, vars) {
+    if (!i18nLoaded) loadI18nJson();
+    var d = I18N[mod] || {};
+    var s = (d[F.lang()] || {})[key];
+    if (s == null) s = (d.en || {})[key];
+    if (s == null) s = (d.ro || {})[key];
+    if (s == null) s = key;
+    if (vars) for (var k in vars) if (Object.prototype.hasOwnProperty.call(vars, k)) s = String(s).split('{' + k + '}').join(String(vars[k]));
+    return s;
+  };
+
+  /* ---------- observator de stocare ---------- */
+  var INDEX_KEY = 'fff.' + SLUG + '.__keys';
+  var PFX = 'fff.' + SLUG + '.';
+  var idx = null; // Set de chei ale aplicației (fără prefix fff.)
+  function loadIdx() {
+    if (idx) return idx;
+    idx = new Set();
+    try {
+      var raw = origGet && LS ? origGet.call(LS, INDEX_KEY) : null;
+      if (raw) JSON.parse(raw).forEach(function (k) { if (typeof k === 'string') idx.add(k); });
+    } catch (e) { /* index corupt: se reface */ }
+    return idx;
+  }
+  function saveIdx() {
+    try { if (LS && origSet) origSet.call(LS, INDEX_KEY, JSON.stringify(Array.from(idx).sort())); } catch (e) { /* plin: ignorat */ }
+  }
+  /* momentul ultimei scrieri pe cheie (folosit de FFF.sync): {cheie: ms}, în fff.<slug>.__mt (exclus din chei/export, ca __keys), scris cu amânare */
+  var MT_KEY = 'fff.' + SLUG + '.__mt', mt = null, mtTimer = 0;
+  function loadMt() {
+    if (mt) return mt;
+    mt = Object.create(null);
+    try {
+      var raw = origGet && LS ? origGet.call(LS, MT_KEY) : null;
+      if (raw) { var o = JSON.parse(raw); Object.keys(o).forEach(function (k) { if (typeof o[k] === 'number') mt[k] = o[k]; }); }
+    } catch (e) { /* corupt: se reface */ }
+    return mt;
+  }
+  function touch(k) {
+    k = String(k);
+    if (k.indexOf('fff.') === 0) return;
+    loadMt()[k] = Date.now();
+    if (mtTimer) return;
+    mtTimer = setTimeout(function () {
+      mtTimer = 0;
+      try { if (LS && origSet) origSet.call(LS, MT_KEY, JSON.stringify(mt)); } catch (e) { /* plin: ignorat */ }
+    }, 400);
+  }
+  F.mtime = function (k) { return loadMt()[String(k)] || 0; };
+  F.mtimeClear = function () { mt = Object.create(null); clearTimeout(mtTimer); mtTimer = 0; try { if (LS && origRem) origRem.call(LS, MT_KEY); } catch (e) { /* ignorat */ } };
+  function track(k) {
+    k = String(k);
+    if (k.indexOf('fff.') === 0) return;
+    var s = loadIdx();
+    if (!s.has(k)) { s.add(k); saveIdx(); }
+  }
+  function untrack(k) {
+    k = String(k);
+    var s = loadIdx();
+    if (s.delete(k)) saveIdx();
+  }
+  var observing = false;
+  if (!DISABLED && LS && P && origGet && origSet && origRem && origClr) {
+    try {
+      P.getItem = function getItem(k) {
+        var v = origGet.apply(this, arguments);
+        if (v !== null && this === LS) { try { track(k); } catch (e) { /* nu strica aplicația */ } }
+        return v;
+      };
+      P.setItem = function setItem(k, v) {
+        var r = origSet.apply(this, arguments);
+        if (this === LS) { try { track(k); touch(k); } catch (e) { /* idem */ } }
+        return r;
+      };
+      P.removeItem = function removeItem(k) {
+        var r = origRem.apply(this, arguments);
+        if (this === LS) { try { untrack(k); } catch (e) { /* idem */ } }
+        return r;
+      };
+      P.clear = function clear() {
+        var r = origClr.apply(this, arguments);
+        if (this === LS) { idx = new Set(); }
+        return r;
+      };
+      observing = true;
+    } catch (e) { observing = false; }
+  }
+
+  /* ---------- FFF.store ---------- */
+  var mem = Object.create(null), frozen = false;   // fără prototip: chei ca __proto__/constructor/toString sunt chei obișnuite
+  function lsOk() { return !!(LS && origGet); }
+  var store = {
+    get: function (k, d) {
+      if (lsOk()) {
+        try { var v = origGet.call(LS, PFX + k); if (v == null) return d; return JSON.parse(v); } catch (e) { /* cade în memorie */ }
+      }
+      return Object.prototype.hasOwnProperty.call(mem, k) ? mem[k] : d;
+    },
+    set: function (k, v) {
+      if (frozen) return false;
+      if (lsOk()) {
+        try { origSet.call(LS, PFX + k, JSON.stringify(v)); delete mem[k]; return true; } catch (e) { /* memorie */ }
+      }
+      mem[k] = v; return false;
+    },
+    remove: function (k) {
+      if (frozen) return;
+      if (lsOk()) { try { origRem.call(LS, PFX + k); } catch (e) { /* ignorat */ } }
+      delete mem[k];
+    },
+    keys: function () {
+      var out = [];
+      try {
+        if (LS) for (var i = 0; i < LS.length; i++) {
+          var n = LS.key(i);
+          if (n && n.indexOf(PFX) === 0 && n !== INDEX_KEY && n !== MT_KEY) out.push(n.slice(PFX.length));
+        }
+      } catch (e) { /* ignorat */ }
+      Object.keys(mem).forEach(function (k) { if (out.indexOf(k) < 0) out.push(k); });
+      return out.sort();
+    },
+    /** Cheile (nume complete din localStorage) care aparțin aplicației: indexate + ale kitului (fff.<slug>.*). */
+    indexKeys: function () {
+      var out = new Set();
+      var present = Object.create(null);
+      try { if (LS) for (var i = 0; i < LS.length; i++) present[LS.key(i)] = 1; } catch (e) { /* ignorat */ }
+      loadIdx().forEach(function (k) { if (present[k]) out.add(k); });
+      Object.keys(present).forEach(function (n) { if (n.indexOf(PFX) === 0 && n !== INDEX_KEY && n !== MT_KEY) out.add(n); });
+      return Array.from(out).sort();
+    },
+    /** Citire/scriere brută pentru modulele kitului (ocolește observatorul). */
+    raw: {
+      get: function (k) { return lsOk() ? origGet.call(LS, k) : null; },
+      set: function (k, v) { if (frozen) return; if (!lsOk()) throw new Error('no-storage'); origSet.call(LS, k, v); },
+      remove: function (k) { if (!frozen && lsOk()) origRem.call(LS, k); }
+    },
+    prefix: PFX,
+    indexKey: INDEX_KEY,
+    mtKey: MT_KEY,
+    /** Blochează orice scriere în stocare până la reîncărcare (restaurare/ștergere): handlerele pagehide/beforeunload ale aplicației
+     *  nu mai pot suprascrie datele tocmai scrise. Înlocuiește Storage.prototype.setItem/removeItem/clear cu no-op, oprește put/add/delete/clear
+     *  din IndexedDB și blochează scrierile FFF.store. NU poate opri atribuirea directă localStorage.cheie = valoare. Ireversibil (până la reload). */
+    freeze: function () {
+      if (frozen) return;
+      frozen = true;
+      var noop = function () {};
+      if (P) ['setItem', 'removeItem', 'clear'].forEach(function (n) {
+        try { Object.defineProperty(P, n, {value: noop, writable: true, configurable: true}); } catch (e) { try { P[n] = noop; } catch (e2) { /* ignorat */ } }
+      });
+      try {
+        var OS = window.IDBObjectStore && window.IDBObjectStore.prototype;
+        if (OS) {
+          var fake = function () {
+            return {readyState: 'pending', result: undefined, error: null, onsuccess: null, onerror: null,
+              addEventListener: noop, removeEventListener: noop, dispatchEvent: function () { return false; }};
+          };
+          ['put', 'add', 'delete', 'clear'].forEach(function (n) { try { Object.defineProperty(OS, n, {value: fake, writable: true, configurable: true}); } catch (e) { /* ignorat */ } });
+        }
+      } catch (e3) { /* ignorat */ }
+    },
+    frozen: function () { return frozen; },
+    forget: function (k) { if (observing) untrack(k); },
+    remember: function (k) { if (observing) track(k); },
+    available: function () { return lsOk(); },
+    observing: function () { return observing; }
+  };
+  F.store = store;
+
+  /* ---------- sha256 ---------- */
+  var K256 = null, H256 = null;
+  function frac(x) { return Math.floor((x - Math.floor(x)) * 4294967296) >>> 0; }
+  function initConsts() {
+    K256 = []; H256 = [];
+    for (var n = 2, c = 0; c < 64; n++) {
+      var p = true;
+      for (var d = 2; d * d <= n; d++) if (n % d === 0) { p = false; break; }
+      if (p) { if (c < 8) H256.push(frac(Math.sqrt(n))); K256.push(frac(Math.cbrt(n))); c++; }
+    }
+  }
+  function sha256js(bytes) {
+    if (!K256) initConsts();
+    var l = bytes.length, bl = l * 8;
+    var padded = new Uint8Array(((l + 9 + 63) >> 6) << 6);
+    padded.set(bytes); padded[l] = 0x80;
+    var dv = new DataView(padded.buffer);
+    dv.setUint32(padded.length - 8, Math.floor(bl / 4294967296)); dv.setUint32(padded.length - 4, bl >>> 0);
+    var h = H256.slice(), w = new Uint32Array(64);
+    function rr(x, n) { return (x >>> n) | (x << (32 - n)); }
+    for (var o = 0; o < padded.length; o += 64) {
+      for (var i = 0; i < 16; i++) w[i] = dv.getUint32(o + i * 4);
+      for (i = 16; i < 64; i++) {
+        var s0 = rr(w[i - 15], 7) ^ rr(w[i - 15], 18) ^ (w[i - 15] >>> 3);
+        var s1 = rr(w[i - 2], 17) ^ rr(w[i - 2], 19) ^ (w[i - 2] >>> 10);
+        w[i] = (w[i - 16] + s0 + w[i - 7] + s1) | 0;
+      }
+      var a = h[0], b = h[1], c = h[2], d2 = h[3], e = h[4], f = h[5], g = h[6], hh = h[7];
+      for (i = 0; i < 64; i++) {
+        var S1 = rr(e, 6) ^ rr(e, 11) ^ rr(e, 25), ch = (e & f) ^ (~e & g);
+        var t1 = (hh + S1 + ch + K256[i] + w[i]) | 0;
+        var S0 = rr(a, 2) ^ rr(a, 13) ^ rr(a, 22), mj = (a & b) ^ (a & c) ^ (b & c);
+        var t2 = (S0 + mj) | 0;
+        hh = g; g = f; f = e; e = (d2 + t1) | 0; d2 = c; c = b; b = a; a = (t1 + t2) | 0;
+      }
+      h[0] = (h[0] + a) | 0; h[1] = (h[1] + b) | 0; h[2] = (h[2] + c) | 0; h[3] = (h[3] + d2) | 0;
+      h[4] = (h[4] + e) | 0; h[5] = (h[5] + f) | 0; h[6] = (h[6] + g) | 0; h[7] = (h[7] + hh) | 0;
+    }
+    return h.map(function (v) { return ('00000000' + (v >>> 0).toString(16)).slice(-8); }).join('');
+  }
+  function toBytes(x) {
+    if (typeof x === 'string') return Promise.resolve(new TextEncoder().encode(x));
+    if (x instanceof Uint8Array) return Promise.resolve(x);
+    if (x instanceof ArrayBuffer) return Promise.resolve(new Uint8Array(x));
+    if (ArrayBuffer.isView(x)) return Promise.resolve(new Uint8Array(x.buffer, x.byteOffset, x.byteLength));
+    if (x && typeof x.arrayBuffer === 'function') return x.arrayBuffer().then(function (b) { return new Uint8Array(b); });
+    return Promise.reject(new TypeError('sha256: tip neacceptat'));
+  }
+  F.sha256 = function (x) {
+    return toBytes(x).then(function (b) {
+      var sub = window.crypto && window.crypto.subtle;
+      if (sub) {
+        return sub.digest('SHA-256', b).then(function (h) {
+          return Array.prototype.map.call(new Uint8Array(h), function (v) { return ('0' + v.toString(16)).slice(-2); }).join('');
+        });
+      }
+      return sha256js(b);
+    });
+  };
+
+  /* ---------- download / pickFile ---------- */
+  F.download = function (name, data, mime) {
+    var blob = data instanceof Blob ? data : new Blob([data], {type: mime || 'application/octet-stream'});
+    var url = URL.createObjectURL(blob);
+    var a = doc.createElement('a');
+    a.href = url; a.download = name; a.hidden = true;
+    (doc.body || doc.documentElement).appendChild(a);
+    a.click();
+    setTimeout(function () { a.remove(); URL.revokeObjectURL(url); }, 4000);
+    return blob.size;
+  };
+  /** Rezolvă cu File sau null dacă utilizatorul anulează. */
+  F.pickFile = function (accept) {
+    return new Promise(function (res) {
+      var i = doc.createElement('input');
+      i.type = 'file'; i.hidden = true;
+      if (accept) i.accept = accept;
+      var done = false;
+      function fin(v) { if (done) return; done = true; i.remove(); res(v); }
+      i.addEventListener('change', function () { fin(i.files && i.files[0] ? i.files[0] : null); });
+      i.addEventListener('cancel', function () { fin(null); });
+      (doc.body || doc.documentElement).appendChild(i);
+      i.click();
+    });
+  };
+
+  /* ---------- instalare PWA (doar reținem evenimentul, nu îl blocăm) ---------- */
+  var core = F.core = {
+    version: KIT_VERSION,
+    slug: SLUG,
+    disabled: DISABLED || false,
+    installEvent: null,
+    modules: function () { return (meta('fff-modules') || '').split(',').filter(Boolean); }
+  };
+  window.addEventListener('beforeinstallprompt', function (e) { core.installEvent = e; bus.emit('installable', e); });
+  window.addEventListener('appinstalled', function () { core.installEvent = null; bus.emit('installed'); });
+
+  F.version = KIT_VERSION;
+  F.ready = function (fn) {
+    if (doc.readyState === 'loading') doc.addEventListener('DOMContentLoaded', function () { fn(); }, {once: true});
+    else fn();
+  };
+  F.fmtBytes = function (n) {
+    if (n < 1024) return n + ' B';
+    if (n < 1048576) return (n / 1024).toFixed(1) + ' KB';
+    return (n / 1048576).toFixed(2) + ' MB';
+  };
+})();
+/* ---- fff-kit/ux ---- */
+/* fff-kit · FFF.ux — confort și satisfacție la utilizare, același în toate aplicațiile:
+ * (1) CSS (ux.css): ținte de atingere ≥44 px pe ecrane tactile, câmpuri cu text ≥16 px (fără zoom-ul intempestiv din iOS), fără întârzierea de 300 ms
+ *     la atingere (touch-action), apăsare vizibilă, derulare lină (respectă „mișcare redusă”), cuvinte lungi rupte în loc să iasă din ecran;
+ * (2) confirmare discretă la copiere în clipboard și la salvarea unui fișier (toast), doar dacă aplicația nu și-a afișat deja propria confirmare;
+ * (3) tasta „/” duce focusul în câmpul de căutare, Esc îl părăsește; (4) legăturile/etichetele mici ne-inline primesc zonă de atingere de 44 px.
+ * Opriri: <meta name="fff-ux" content="off">, ?noux=1; pe element: data-fff-hit="off" nu se aplică; data-fff-nouxfont păstrează textul propriu al câmpului. */
+(function () {
+  'use strict';
+  var F = window.FFF;
+  if (!F || F.ux) return;
+  var doc = document, de = doc.documentElement;
+  function T(k) { return F.t('ux', k); }
+  var OFF = false;
+  function readOff() {
+    var m = doc.querySelector('meta[name="fff-ux"]');
+    OFF = (m && /^(off|0|false)$/i.test((m.getAttribute('content') || '').trim())) || /[?&]noux=(1|true)\b/.test(location.search);
+    if (OFF) de.setAttribute('data-fff-ux', 'off');
+  }
+  function toast(msg) {
+    try { if (F.dialog && F.dialog.toast) F.dialog.toast(msg, {type: 'success', timeout: 2200}); } catch (e) { /* ignorat */ }
+  }
+
+  /* confirmare doar dacă aplicația nu a afișat deja ceva similar (urmărim modificările din momentul acțiunii până la ~450 ms după încheierea ei) */
+  function watch(re) {
+    var w = {own: false, mo: null, stop: function () { if (w.mo) w.mo.disconnect(); }};
+    try {
+      w.mo = new MutationObserver(function (ms) {
+        for (var i = 0; i < ms.length && !w.own; i++) {
+          var m = ms[i], t = '';
+          if (m.target.closest && m.target.closest('[data-fff-toasts]')) continue;
+          if (m.type === 'characterData') t = m.target.nodeValue || '';
+          else if (m.type === 'attributes') t = (m.target.textContent || '') + ' ' + (m.target.getAttribute('aria-label') || '') + ' ' + (m.target.getAttribute('title') || '');
+          else for (var j = 0; j < m.addedNodes.length; j++) t += ' ' + (m.addedNodes[j].textContent || '');
+          if (re.test(t)) w.own = true;
+        }
+      });
+      w.mo.observe(doc.body, {subtree: true, childList: true, characterData: true, attributes: true, attributeFilter: ['class', 'hidden', 'aria-label', 'title']});
+    } catch (e) { /* ignorat */ }
+    return w;
+  }
+  function finish(w, msg) { setTimeout(function () { w.stop(); if (!w.own) toast(msg); }, 450); }
+  function confirmUnlessOwn(re, msg) { if (!OFF) finish(watch(re), msg); }
+  var RE_COPY = /copi|cop[ií]ad|kopier|másol|copied|copy/i, RE_SAVE = /salvat|exportat|descărc|descarg|télécharg|scaric|download|saved|export|gespeichert|letölt|mentve|baixad|guardad/i;
+
+  function patchClipboard() {
+    try {
+      var cb = navigator.clipboard;
+      if (!cb || !cb.writeText || cb.writeText.__fffux) return;
+      var orig = cb.writeText.bind(cb);
+      var w = function (t) {
+        var w = OFF ? null : watch(RE_COPY), p = orig(t);
+        if (w) { if (p && p.then) p.then(function () { finish(w, T('copied')); }, function () { w.stop(); }); else w.stop(); }
+        return p;
+      };
+      w.__fffux = true;
+      cb.writeText = w;
+    } catch (e) { /* ignorat */ }
+    doc.addEventListener('copy', function () { /* copiere manuală: nimic */ }, {passive: true});
+  }
+  function patchDownload() {
+    try {
+      var proto = HTMLAnchorElement.prototype, orig = proto.click;
+      if (orig.__fffux) return;
+      var c = function () {
+        try { if (!OFF && this.hasAttribute && this.hasAttribute('download')) { var n = this.getAttribute('download') || ''; confirmUnlessOwn(RE_SAVE, T('saved') + (n ? ': ' + n : '')); } } catch (e) { /* ignorat */ }
+        return orig.apply(this, arguments);
+      };
+      c.__fffux = true;
+      proto.click = c;
+    } catch (e) { /* ignorat */ }
+    doc.addEventListener('click', function (e) {                                  // clic real pe un <a download>
+      var a = e.target && e.target.closest && e.target.closest('a[download]');
+      if (a && !OFF) { var n = a.getAttribute('download') || ''; confirmUnlessOwn(RE_SAVE, T('saved') + (n ? ': ' + n : '')); }
+    }, true);
+  }
+
+  /* „/” → căutare */
+  function searchField() {
+    var q = doc.querySelectorAll('input[type=search],[role=searchbox],input[placeholder*="ăut" i],input[placeholder*="earch" i],input[placeholder*="echerch" i],input[placeholder*="uscar" i],input[aria-label*="ăut" i],input[aria-label*="earch" i],input[id*="search" i],input[id*="cauta" i],input[id*="caut" i],input[name*="search" i]');
+    for (var i = 0; i < q.length; i++) {
+      var e = q[i], r = e.getBoundingClientRect(), cs = getComputedStyle(e);
+      if (r.width > 0 && r.height > 0 && cs.visibility !== 'hidden' && cs.display !== 'none' && !e.disabled && !e.readOnly) return e;
+    }
+    return null;
+  }
+  function onKey(e) {
+    if (OFF || e.defaultPrevented || e.ctrlKey || e.metaKey || e.altKey) return;
+    var t = e.target, tag = t && t.tagName, typing = tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT' || (t && t.isContentEditable);
+    if (e.key === '/' && !typing) {
+      var f = searchField();
+      if (f) { e.preventDefault(); f.focus(); try { f.select(); } catch (x) { /* ignorat */ } }
+    } else if (e.key === 'Escape' && typing && t.type === 'search') { t.blur(); }
+  }
+
+  /* zonă de atingere pentru legături/etichete mici, ne-inline (butoane stilizate ca <a>), doar pe ecrane tactile */
+  function hitPass() {
+    if (OFF || !window.matchMedia || !matchMedia('(pointer:coarse)').matches) return;
+    var as = doc.querySelectorAll('a[href]:not([data-fff-hit]), [role=link]:not([data-fff-hit])'), n = 0;
+    for (var i = 0; i < as.length && n < 300; i++, n++) {
+      var a = as[i], cs = getComputedStyle(a);
+      if (cs.display === 'inline') continue;
+      var r = a.getBoundingClientRect();
+      if (r.width < 1 || r.height < 1 || r.height >= 44) continue;
+      if (cs.position === 'absolute' || cs.position === 'fixed') continue;
+      a.setAttribute('data-fff-hit', '1');
+    }
+  }
+  var hitT = 0;
+  function scheduleHit() { clearTimeout(hitT); hitT = setTimeout(hitPass, 500); }
+
+  function init() {
+    readOff();
+    if (OFF) return;
+    patchClipboard(); patchDownload();
+    doc.addEventListener('keydown', onKey);
+    scheduleHit();
+    try { new MutationObserver(scheduleHit).observe(doc.body, {childList: true, subtree: true}); } catch (e) { /* ignorat */ }
+  }
+  F.ux = {off: function () { OFF = true; de.setAttribute('data-fff-ux', 'off'); }, hitPass: hitPass, searchField: searchField, version: 1};
+  if (doc.readyState === 'loading') doc.addEventListener('DOMContentLoaded', init); else init();
+})();
+/* ---- fff-kit/label ---- */
+/* fff-kit · label — dialogul „Transparență”: rețea, stocare, permisiuni, fișier + hash, copie de siguranță. */
+(function () {
+  'use strict';
+  var F = window.FFF;
+  if (!F || F.label) return;
+  var doc = document;
+  var DISABLED = F.core && F.core.disabled;
+  function T(k, v) { return F.t('label', k, v); }
+
+  var PERM = {
+    getUserMedia: 'cam', geolocation: 'geo', RTCPeerConnection: 'rtc', 'navigator.share': 'share', Notification: 'notif',
+    speechSynthesis: 'tts', SpeechRecognition: 'stt', clipboard: 'clip', serviceWorker: 'sw', indexedDB: 'idb',
+    localStorage: 'ls', 'Web Crypto': 'crypto', WebGL: 'webgl', WebGPU: 'webgpu', Worker: 'worker', BroadcastChannel: 'bc'
+  };
+  var SHELL = "LC_ALL=C sed -E 's/data-fff-hash=\"[0-9a-f]*\"/data-fff-hash=\"\"/g; s/\"sha256\":\"[0-9a-f]*\"/\"sha256\":\"\"/g' index.html | sha256sum";
+
+  /* ---------- info ---------- */
+  var infoCache;
+  function info() {
+    if (infoCache) return infoCache;
+    var el = doc.getElementById('fff-info'), o = null;
+    if (el) { try { o = JSON.parse(el.textContent || '{}'); } catch (e) { o = null; } }
+    infoCache = o || {};
+    infoCache._present = !!o;
+    return infoCache;
+  }
+
+  /* ---------- DOM mic ---------- */
+  function h(tag, attrs) {
+    var e = doc.createElement(tag);
+    if (attrs) for (var k in attrs) if (Object.prototype.hasOwnProperty.call(attrs, k) && attrs[k] != null) {
+      if (k === 'text') e.textContent = attrs[k]; else if (k === 'class') e.className = attrs[k]; else e.setAttribute(k, attrs[k]);
+    }
+    for (var i = 2; i < arguments.length; i++) {
+      var c = arguments[i];
+      if (c == null || c === false) continue;
+      e.appendChild(typeof c === 'string' ? doc.createTextNode(c) : c);
+    }
+    return e;
+  }
+  function btn(text, cls, fn) {
+    var b = h('button', {type: 'button', class: 'fff-btn' + (cls ? ' ' + cls : ''), text: text});
+    if (fn) b.addEventListener('click', fn);
+    return b;
+  }
+  var uid = 0;
+  function field(label, type, ac) {
+    var id = 'fff-f' + (++uid);
+    var i = h('input', {id: id, type: type, class: 'fff-input', autocomplete: ac || 'off'});
+    return {wrap: h('div', {class: 'fff-field'}, h('label', {for: id, text: label}), i), input: i};
+  }
+
+  /* ---------- tema gazdei ---------- */
+  function hostDark() {
+    function rgba(el) {
+      var m = /rgba?\(([^)]+)\)/.exec(getComputedStyle(el).backgroundColor || '');
+      if (!m) return null;
+      var p = m[1].split(/[ ,\/]+/).map(parseFloat);
+      if (p.length > 3 && p[3] === 0) return null;
+      return p;
+    }
+    var p = (doc.body && rgba(doc.body)) || rgba(doc.documentElement);
+    if (!p) return null;
+    function lin(v) { v /= 255; return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4); }
+    return (0.2126 * lin(p[0]) + 0.7152 * lin(p[1]) + 0.0722 * lin(p[2])) < 0.18;
+  }
+
+  /* ---------- hash canonic ---------- */
+  function canonBytes(buf) {
+    var u = new Uint8Array(buf), s = '';
+    for (var i = 0; i < u.length; i += 0x8000) s += String.fromCharCode.apply(null, u.subarray(i, i + 0x8000));
+    s = s.replace(/data-fff-hash="[0-9a-f]*"/g, 'data-fff-hash=' + '"' + '"').replace(/"sha256":"[0-9a-f]*"/g, '"sha256":' + '"' + '"');
+    var out = new Uint8Array(s.length);
+    for (var j = 0; j < s.length; j++) out[j] = s.charCodeAt(j);
+    return out;
+  }
+  function declaredHash() {
+    var a = doc.documentElement.getAttribute('data-fff-hash');
+    return /^[0-9a-f]{64}$/.test(a || '') ? a : (/^[0-9a-f]{64}$/.test(info().sha256 || '') ? info().sha256 : '');
+  }
+
+  /* ---------- dialog ---------- */
+  var dlg = null, timer = 0, lastFocus = null;
+
+  function section(id, title) {
+    var hid = 'fff-h-' + id;
+    var sec = h('section', {class: 'fff-sec', 'aria-labelledby': hid}, h('h3', {id: hid, text: title}));
+    return sec;
+  }
+
+  function storageRows(tbody, sum) {
+    var keys = F.store.indexKeys(), rows = [], total = 0;
+    var enc = new TextEncoder();
+    keys.forEach(function (k) {
+      var v = F.store.raw.get(k) || '';
+      var n = enc.encode(k).length + enc.encode(v).length;
+      total += n; rows.push([k, n]);
+    });
+    rows.sort(function (a, b) { return b[1] - a[1]; });
+    var sig = rows.length + ':' + total;
+    if (tbody._sig === sig) return;
+    tbody._sig = sig;
+    tbody.textContent = '';
+    rows.slice(0, 25).forEach(function (r) {
+      tbody.appendChild(h('tr', null, h('td', {class: 'fff-mono', text: r[0]}), h('td', {class: 'fff-num', text: F.fmtBytes(r[1])})));
+    });
+    if (rows.length > 25) tbody.appendChild(h('tr', null, h('td', {colspan: '2', text: T('store_more', {n: rows.length - 25})})));
+    sum.textContent = rows.length ? T('store_sum', {n: rows.length, size: F.fmtBytes(total)}) : T('store_none');
+    tbody.parentNode.hidden = !rows.length;
+  }
+
+  function build() {
+    var I = info(), a = F.app;
+    var name = I.name || a.name, ver = I.version || a.version, upd = I.updated || a.updated;
+    var d = h('dialog', {class: 'fff-dlg', 'aria-labelledby': 'fff-lbl-title', lang: F.lang()});
+    var dark = hostDark();
+    if (dark === true) d.classList.add('fff-dark'); else if (dark === false) d.classList.add('fff-light');
+    var inner = h('div', {class: 'fff-in'});
+    var closeB = btn('×', 'fff-x', function () { api.close(); });
+    closeB.setAttribute('aria-label', T('close'));
+    inner.appendChild(h('div', {class: 'fff-hd'}, h('h2', {id: 'fff-lbl-title', text: T('title')}), closeB));
+    inner.appendChild(h('p', {class: 'fff-lead'}, h('strong', {text: name}), ' ', h('span', {class: 'fff-mut', text: 'v ' + (ver || '?') + (upd ? ' · ' + upd : '')})));
+    if (I.description) inner.appendChild(h('p', {class: 'fff-mut', text: I.description}));
+    if (DISABLED) inner.appendChild(h('p', {class: 'fff-note', role: 'note', text: T('disabled', {reason: DISABLED})}));
+    if (I.selfModifying) inner.appendChild(h('p', {class: 'fff-note', role: 'note', text: T('self_mod')}));
+
+    /* Rețea */
+    var net = section('net', T('net_h'));
+    if (!I._present) net.appendChild(h('p', {class: 'fff-mut', text: T('net_unknown')}));
+    else {
+      var eg = I.egress || [];
+      if (!eg.length) net.appendChild(h('p', null, h('strong', {text: T('net_none')})));
+      else {
+        net.appendChild(h('p', {text: T('net_list')}));
+        var ul = h('ul', {class: 'fff-list'});
+        eg.forEach(function (e) {
+          var host = typeof e === 'string' ? e : e.host, via = typeof e === 'string' ? '' : (e.via || []).join(', ');
+          ul.appendChild(h('li', null, h('span', {class: 'fff-mono', text: host}), via ? h('span', {class: 'fff-mut', text: ' — ' + via}) : null));
+        });
+        net.appendChild(ul);
+      }
+      if (I.egressNote) net.appendChild(h('p', {class: 'fff-mut', text: I.egressNote}));
+      net.appendChild(h('p', {class: 'fff-mut fff-sm', text: T('net_note')}));
+    }
+    inner.appendChild(net);
+
+    /* Stocare */
+    var st = section('store', T('store_h'));
+    var sum = h('p', {role: 'status'});
+    var tb = h('tbody');
+    var tbl = h('table', {class: 'fff-tbl'}, h('caption', {class: 'fff-sr', text: T('store_h')}),
+      h('thead', null, h('tr', null, h('th', {scope: 'col', text: T('store_key')}), h('th', {scope: 'col', class: 'fff-num', text: T('store_size')}))), tb);
+    st.appendChild(sum); st.appendChild(tbl);
+    if ((I.permissions || []).indexOf('indexedDB') >= 0) st.appendChild(h('p', {class: 'fff-mut fff-sm', text: T('store_idb')}));
+    st.appendChild(h('p', {class: 'fff-mut fff-sm', text: T('store_note')}));
+    inner.appendChild(st);
+    storageRows(tb, sum);
+    d._tick = function () { storageRows(tb, sum); };
+
+    /* Permisiuni */
+    var pm = section('perm', T('perm_h'));
+    if (!I._present) pm.appendChild(h('p', {class: 'fff-mut', text: T('net_unknown')}));
+    else {
+      var ps = I.permissions || [];
+      if (!ps.length) pm.appendChild(h('p', {text: T('perm_none')}));
+      else {
+        var pl = h('ul', {class: 'fff-list fff-cols'});
+        ps.forEach(function (p) { pl.appendChild(h('li', {text: PERM[p] ? T('perm_' + PERM[p]) : p})); });
+        pm.appendChild(pl);
+      }
+      pm.appendChild(h('p', {class: 'fff-mut fff-sm', text: T('perm_note')}));
+    }
+    inner.appendChild(pm);
+
+    /* Fișier */
+    var fl = section('file', T('file_h'));
+    var dh = declaredHash();
+    if (I.sizeBytes) fl.appendChild(h('p', {text: T('file_size', {size: F.fmtBytes(I.sizeBytes)})}));
+    if (dh) {
+      fl.appendChild(h('p', {class: 'fff-sm'}, T('file_hash') + ' ', h('code', {class: 'fff-mono fff-break', text: dh})));
+      var res = h('p', {role: 'status', class: 'fff-res'});
+      var vb = btn(T('verify_btn'), '', function () {
+        res.className = 'fff-res'; res.textContent = '';
+        F.pickFile('.html,.htm,text/html').then(function (f) {
+          if (!f) return null;
+          return f.arrayBuffer().then(function (buf) { return F.sha256(canonBytes(buf)); }).then(function (got) {
+            if (got === dh) { res.className = 'fff-res fff-ok'; res.textContent = '✔ ' + T('verify_ok'); }
+            else { res.className = 'fff-res fff-bad'; res.textContent = '✖ ' + T('verify_bad', {got: got}); }
+          });
+        }).catch(function () { res.className = 'fff-res fff-bad'; res.textContent = T('verify_err'); });
+      });
+      fl.appendChild(h('p', null, vb));
+      fl.appendChild(res);
+      fl.appendChild(h('details', {class: 'fff-det'}, h('summary', {text: T('file_how_h')}),
+        h('p', {class: 'fff-sm', text: T('file_how')}), h('pre', {class: 'fff-pre fff-mono', tabindex: '0', 'aria-label': T('verify_cmd'), text: SHELL})));
+    } else fl.appendChild(h('p', {class: 'fff-mut', text: T('file_nohash')}));
+    inner.appendChild(fl);
+
+    /* Copie de siguranță */
+    if (F.bundle && !DISABLED) inner.appendChild(backup());
+
+    /* Kit + instalare */
+    var foot = h('div', {class: 'fff-foot'});
+    var mods = (I.kit && I.kit.modules) || F.core.modules();
+    foot.appendChild(h('p', {class: 'fff-mut fff-sm', text: T('kit_line', {v: F.version, mods: mods.join(', ') || 'core'})}));
+    if (F.core.installEvent) {
+      var ib = btn(T('install'), 'fff-primary', function () {
+        var ev = F.core.installEvent;
+        if (!ev) return;
+        ev.prompt(); F.core.installEvent = null; ib.hidden = true;
+      });
+      foot.appendChild(ib);
+    }
+    inner.appendChild(foot);
+
+    d.appendChild(inner);
+    d.addEventListener('click', function (e) { if (e.target === d) api.close(); });
+    d.addEventListener('keydown', function (e) { if (e.key !== 'Escape') e.stopPropagation(); });
+    d.addEventListener('keyup', function (e) { e.stopPropagation(); });
+    d.addEventListener('keypress', function (e) { e.stopPropagation(); });
+    d.addEventListener('close', function () { if (dlg === d) cleanup(); });
+    return d;
+  }
+
+  /** Număr cu separator de mii după limbă (aceeași formă ca în textele traduse). */
+  function fmtNum(n) {
+    var sep = {en: ',', it: '.', de: '.'}[F.lang()] || ' ';
+    return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, sep);
+  }
+
+  function backup() {
+    var bk = section('bk', T('bk_h'));
+    var status = h('p', {role: 'status', class: 'fff-res'});
+    function say(msg, kind) { status.className = 'fff-res' + (kind ? ' fff-' + kind : ''); status.textContent = msg; }
+    function fail(e) { say((e && e.message) || String(e), 'bad'); }
+    bk.appendChild(h('p', {class: 'fff-mut fff-sm', text: T('bk_hint', {iter: fmtNum(F.bundle.iterations)})}));
+
+    /* export criptat */
+    var encRow = h('div', {class: 'fff-box', hidden: ''});
+    var pw1 = field(T('bk_pw', {n: F.bundle.minPassword}), 'password', 'new-password'), pw2 = field(T('bk_pw2'), 'password', 'new-password');
+    var goEnc = btn(T('bk_go'), 'fff-primary', function () {
+      if (pw1.input.value !== pw2.input.value) return say(T('pw_mismatch'), 'bad');
+      F.bundle.export({encrypt: true, password: pw1.input.value}).then(function (r) {
+        pwStrength.textContent = '';
+        say(T('ok_export_enc', {file: r.filename, n: r.keys}), 'ok'); pw1.input.value = pw2.input.value = ''; encRow.hidden = true; encBtn.setAttribute('aria-expanded', 'false');
+      }).catch(fail);
+    });
+    var pwStrength = h('p', {role: 'status', class: 'fff-mut fff-sm fff-res'});
+    pw1.input.addEventListener('input', function () { pwStrength.textContent = pw1.input.value ? F.t('bundle', ['pw_weak', 'pw_fair', 'pw_strong'][F.bundle.passwordStrength(pw1.input.value)]) : ''; });
+    encRow.appendChild(pw1.wrap); encRow.appendChild(pwStrength); encRow.appendChild(pw2.wrap); encRow.appendChild(h('div', {class: 'fff-row'}, goEnc));
+
+    /* import */
+    var impRow = h('div', {class: 'fff-box', hidden: ''});
+    var impPw = field(T('bk_pw_file'), 'password', 'current-password');
+    var pending = null;
+    var impGo = btn(T('bk_import_go'), 'fff-primary', function () { doImport(pending, impPw.input.value); });
+    impRow.appendChild(impPw.wrap); impRow.appendChild(h('div', {class: 'fff-row'}, impGo));
+    function doImport(file, pw) {
+      F.bundle.import(file, {password: pw, reload: true}).then(function (r) {
+        if (r.cancelled) return say(T('cancelled'));
+        impRow.hidden = true; impPw.input.value = '';
+        say(T('ok_import', {n: r.keys}), 'ok');
+      }).catch(function (e) {
+        if (e && e.code === 'bad_password') { impRow.hidden = false; impPw.input.focus(); }
+        fail(e);
+      });
+    }
+
+    var expB = btn(T('bk_export'), '', function () {
+      F.bundle.export().then(function (r) { if (r.cancelled) return say(T('cancelled')); say(T('ok_export', {file: r.filename, n: r.keys}), 'ok'); }).catch(fail);
+    });
+    var encBtn = btn(T('bk_export_enc'), '', function () {
+      var open = encRow.hidden;
+      encRow.hidden = !open; encBtn.setAttribute('aria-expanded', String(open));
+      if (open) pw1.input.focus();
+    });
+    encBtn.setAttribute('aria-expanded', 'false');
+    var impBtn = btn(T('bk_import'), '', function () {
+      F.pickFile('.json,application/json').then(function (f) {
+        if (!f) return;
+        pending = f; impRow.hidden = true;
+        return F.bundle.inspect(f).then(function (m) {
+          if (m.encrypted) { impRow.hidden = false; impPw.input.focus(); say(T('enter_pw', {file: f.name})); }
+          else doImport(f);
+        });
+      }).catch(fail);
+    });
+    var wipeB = btn(T('bk_wipe'), 'fff-danger-o', function () {
+      F.bundle.wipe({reload: true}).then(function (r) {
+        if (r.cancelled) return say(T('cancelled'));
+        say(r.keys ? T('ok_wipe', {n: r.keys}) : T('nothing_to_wipe'), 'ok');
+      }).catch(fail);
+    });
+    var syncB = null;
+    if (F.sync && F.sync.supported()) {
+      syncB = btn(T('bk_sync'), '', function () {
+        F.sync.dialog({reload: true}).then(function (r) {
+          say(F.t('sync', 'result', {adopted: r.adopted, same: r.same, conflicts: r.conflicts}), 'ok');
+        }).catch(fail);
+      });
+    }
+    bk.appendChild(h('div', {class: 'fff-row'}, expB, encBtn, impBtn, wipeB));
+    var histB = null;
+    if (F.history && F.history.supported()) {
+      histB = btn(T('bk_history'), '', function () { F.history.dialog({reload: true}).catch(fail); });
+    }
+    if (syncB || histB) bk.appendChild(h('div', {class: 'fff-row'}, syncB, histB));
+    bk.appendChild(encRow); bk.appendChild(impRow); bk.appendChild(status);
+    return bk;
+  }
+
+  function cleanup() {
+    clearInterval(timer); timer = 0;
+    if (dlg) { dlg.remove(); dlg = null; }
+    if (lastFocus && lastFocus.isConnected && lastFocus.focus) { try { lastFocus.focus(); } catch (e) { /* ignorat */ } }
+    lastFocus = null;
+  }
+
+  var api = F.label = {
+    state: 'init',
+    open: function () {
+      if (dlg) return dlg;
+      infoCache = null;
+      lastFocus = doc.activeElement;
+      dlg = build();
+      (doc.body || doc.documentElement).appendChild(dlg);
+      if (typeof dlg.showModal === 'function') dlg.showModal(); else dlg.setAttribute('open', '');
+      timer = setInterval(function () { if (dlg && dlg._tick) dlg._tick(); }, 1500);
+      F.bus.emit('label:open');
+      return dlg;
+    },
+    close: function () {
+      if (!dlg) return;
+      var d = dlg;
+      try { d.close(); } catch (e) { /* ignorat */ }
+      if (dlg === d) cleanup();
+    },
+    isOpen: function () { return !!dlg; },
+    canon: canonBytes,
+    shellCommand: SHELL
+  };
+
+  /* ---------- transformarea #app-version în buton ---------- */
+  var fallback = null;
+  function rgba(str) {
+    var m = /rgba?\(([^)]+)\)/.exec(str || '');
+    if (!m) return null;
+    var p = m[1].split(/[ ,\/]+/).map(parseFloat);
+    return [p[0], p[1], p[2], p.length > 3 ? p[3] : 1];
+  }
+  function lum(c) {
+    function f(v) { v /= 255; return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4); }
+    return 0.2126 * f(c[0]) + 0.7152 * f(c[1]) + 0.0722 * f(c[2]);
+  }
+  function ratio(a, b) { var x = lum(a), y = lum(b); return (Math.max(x, y) + 0.05) / (Math.min(x, y) + 0.05); }
+  /** Fundalul efectiv (amestecă straturile semitransparente peste primul fundal opac; implicit alb). */
+  function effBg(el) {
+    var layers = [], n = el;
+    while (n && n.nodeType === 1) {
+      var c = rgba(getComputedStyle(n).backgroundColor);
+      if (c && c[3] > 0) { layers.push(c); if (c[3] >= 1) break; }
+      n = n.parentElement;
+    }
+    var base = layers.length && layers[layers.length - 1][3] >= 1 ? layers.pop() : [255, 255, 255, 1];
+    while (layers.length) {
+      var t = layers.pop();
+      base = [t[0] * t[3] + base[0] * (1 - t[3]), t[1] * t[3] + base[1] * (1 - t[3]), t[2] * t[3] + base[2] * (1 - t[3]), 1];
+    }
+    return base;
+  }
+  /** Butonul de rezervă din footer moștenește culoarea gazdei; dacă nu atinge 4,5:1, alege negru/alb. */
+  function fitContrast(el) {
+    try {
+      var fg = rgba(getComputedStyle(el).color), bg = effBg(el);
+      if (!fg || ratio(fg, bg) >= 4.6) return;
+      el.style.color = ratio([0, 0, 0], bg) >= ratio([255, 255, 255], bg) ? '#000' : '#fff';
+    } catch (e) { /* ignorat */ }
+  }
+  function visibleFooter() {
+    var fs = doc.querySelectorAll('footer');
+    for (var i = 0; i < fs.length; i++) if (fs[i].getClientRects().length && getComputedStyle(fs[i]).visibility !== 'hidden') return fs[i];
+    return null;
+  }
+  /* Dimensiuni minime (WCAG 2.2 · 2.5.8 țintă ≥ 24 px; text ≥ 12 px) fără a atinge layoutul aplicației:
+     inline → inline-flex doar dacă elementul e într-adevăr inline; fontul se ridică la 12 px doar acolo unde e mai mic. */
+  function fit(el) {
+    try {
+      var all = [el].concat([].slice.call(el.querySelectorAll('*'))), i, n;
+      for (i = 0; i < all.length; i++) { all[i].removeAttribute('data-fff-fs'); }
+      el.removeAttribute('data-fff-inl');
+      if (getComputedStyle(el).display === 'inline') el.setAttribute('data-fff-inl', '1');
+      for (i = 0; i < all.length; i++) {
+        n = all[i];
+        var has = false, c;
+        for (c = n.firstChild; c; c = c.nextSibling) if (c.nodeType === 3 && c.nodeValue.trim()) { has = true; break; }
+        if (has && parseFloat(getComputedStyle(n).fontSize) < 12) n.setAttribute('data-fff-fs', '1');
+      }
+    } catch (e) {}
+  }
+  var fitT = 0, fitEl = null;
+  function fitSoon() { if (fitT) return; fitT = setTimeout(function () { fitT = 0; var e = doc.querySelector('#app-version[data-fff-label]'); if (e) fit(e); }, 150); }
+  function decorate() {
+    var el = doc.getElementById('app-version');
+    if (el) {
+      if (fallback) { fallback.remove(); fallback = null; }
+      if (el.getAttribute('data-fff-label')) { if (fitEl !== el) { fitEl = el; fit(el); } api.state = 'button'; return; }
+      if (el.closest('a,button,[role="button"],[role="link"],summary,label,input,select,textarea')) { api.state = 'nested'; return; }
+      el.setAttribute('data-fff-label', '1');
+      el.setAttribute('role', 'button');
+      el.setAttribute('tabindex', '0');
+      el.setAttribute('aria-haspopup', 'dialog');
+      el.setAttribute('title', T('open_hint'));
+      fitEl = el; fit(el);
+      api.state = 'button';
+      return;
+    }
+    if (!fallback && doc.readyState === 'complete') {
+      var ft = visibleFooter();
+      if (ft) {
+        fallback = h('button', {type: 'button', class: 'fff-chip', 'data-fff-chip': '1', 'aria-haspopup': 'dialog', title: T('open_hint'), text: T('title')});
+        fallback.addEventListener('click', function () { api.open(); });
+        ft.appendChild(fallback);
+        fitContrast(fallback);
+        api.state = 'footer';
+      } else api.state = 'none';
+    }
+  }
+  function onClick(e) {
+    var t = e.target && e.target.closest && e.target.closest('#app-version[data-fff-label]');
+    if (t) { e.preventDefault(); api.open(); }
+  }
+  function onKey(e) {
+    if (e.key !== 'Enter' && e.key !== ' ') return;
+    var t = e.target && e.target.closest && e.target.closest('#app-version[data-fff-label]');
+    if (t) { e.preventDefault(); api.open(); }
+  }
+  function init() {
+    // resturi dintr-o copie salvată de aplicație (outerHTML): le curățăm înainte de a le recrea
+    [].slice.call(doc.querySelectorAll('dialog.fff-dlg, [data-fff-chip]')).forEach(function (n) { n.remove(); });
+    if (DISABLED) { api.state = 'disabled'; return; }
+    decorate();
+    doc.addEventListener('click', onClick);
+    doc.addEventListener('keydown', onKey);
+    if (window.MutationObserver) {
+      var pend = false;
+      new MutationObserver(function () {
+        if (pend) return;
+        pend = true;
+        setTimeout(function () { pend = false; decorate(); }, 200);
+      }).observe(doc.body || doc.documentElement, {childList: true, subtree: true});
+    }
+    window.addEventListener('load', function () { setTimeout(decorate, 800); setTimeout(fitSoon, 900); });
+    window.addEventListener('resize', fitSoon);
+    F.onLang(function () {
+      var el = doc.querySelector('#app-version[data-fff-label]');
+      if (el) el.setAttribute('title', T('open_hint'));
+      if (dlg) { api.close(); api.open(); }
+    });
+  }
+  F.ready(init);
+})();
+</script>
+<script type="application/json" id="fff-i18n">{"ux":{"ro":{"copied":"Copiat","saved":"Salvat"},"en":{"copied":"Copied","saved":"Saved"},"fr":{"copied":"Copié","saved":"Enregistré"},"it":{"copied":"Copiato","saved":"Salvato"},"es":{"copied":"Copiado","saved":"Guardado"},"pt":{"copied":"Copiado","saved":"Guardado"},"de":{"copied":"Kopiert","saved":"Gespeichert"},"hu":{"copied":"Másolva","saved":"Mentve"}},"label":{"ro":{"title":"Transparență","open_hint":"Deschide eticheta de transparență","close":"Închide","disabled":"Funcțiile kitului sunt dezactivate pentru această aplicație: {reason}","self_mod":"Atenție: aplicația își poate salva propria copie (împreună cu datele tale). Suma SHA-256 declarată se aplică doar fișierului distribuit inițial.","net_h":"Rețea","net_none":"0 cereri externe declarate","net_list":"Gazde externe declarate sau permise de politica de securitate (CSP):","net_note":"Declarat la construirea fișierului, prin analiza codului; poți verifica și în fila Rețea a instrumentelor browserului.","net_unknown":"Informații indisponibile: fișierul nu conține descriptorul de transparență.","store_h":"Stocare locală","store_none":"Nicio cheie în localStorage.","store_sum":"{n} chei · {size}","store_key":"Cheie","store_size":"Mărime","store_more":"…și încă {n} chei","store_idb":"Aplicația folosește și IndexedDB, care nu este inclus în copia de siguranță.","store_note":"Datele rămân în acest browser; nimic nu este trimis.","perm_h":"Permisiuni și API-uri folosite","perm_none":"Nu au fost detectate API-uri sensibile.","perm_note":"Detectate static în codul sursă; pentru cele sensibile, browserul îți cere acordul.","perm_cam":"Cameră / microfon","perm_geo":"Locație","perm_rtc":"Conexiuni directe între browsere (WebRTC)","perm_share":"Partajare (Web Share)","perm_notif":"Notificări","perm_tts":"Sinteză vocală","perm_stt":"Recunoaștere vocală","perm_clip":"Clipboard","perm_sw":"Service worker (instalare / offline)","perm_idb":"IndexedDB","perm_ls":"localStorage","perm_crypto":"Criptografie (Web Crypto)","perm_webgl":"WebGL","perm_webgpu":"WebGPU","perm_worker":"Web Worker","perm_bc":"BroadcastChannel","file_h":"Fișier","file_size":"Dimensiune: {size}","file_hash":"SHA-256 declarat:","file_nohash":"Suma de control nu este declarată în acest fișier.","file_how_h":"Cum verifici","file_how":"Alege fișierul descărcat: se calculează SHA-256 după golirea câmpurilor de hash (data-fff-hash și „sha256”) și se compară cu valoarea declarată. Același calcul în terminal:","verify_btn":"Verifică un fișier descărcat…","verify_ok":"Se potrivește: fișierul este identic cu cel declarat.","verify_bad":"Nu se potrivește. Calculat: {got}","verify_err":"Fișierul nu a putut fi citit.","verify_cmd":"Comandă de verificare","bk_h":"Copie de siguranță","bk_hint":"Fișier .fff.json cu datele din localStorage ale aplicației. Varianta criptată folosește AES-GCM 256 cu cheie derivată prin PBKDF2-SHA256 ({iter} de iterații); parola nu poate fi recuperată.","bk_export":"Exportă","bk_export_enc":"Exportă criptat…","bk_import":"Importă…","bk_wipe":"Șterge datele aplicației","bk_pw":"Parolă (min. {n} caractere)","bk_pw2":"Repetă parola","bk_go":"Exportă criptat","bk_pw_file":"Parola fișierului","bk_import_go":"Importă","pw_mismatch":"Parolele nu coincid.","ok_export":"Exportat: {file} ({n} chei).","ok_export_enc":"Exportat criptat: {file} ({n} chei).","ok_import":"Importate {n} chei. Se reîncarcă pagina…","ok_wipe":"Șterse {n} chei. Se reîncarcă pagina…","nothing_to_wipe":"Nu există date de șters.","enter_pw":"Fișierul {file} este criptat: introdu parola.","cancelled":"Anulat.","kit_line":"fff-kit v{v} · module: {mods}","install":"Instalează aplicația","bk_sync":"Sincronizează între dispozitive","bk_history":"Istoric (mașina timpului)"},"en":{"title":"Transparency","open_hint":"Open the transparency label","close":"Close","disabled":"Kit features are disabled for this app: {reason}","self_mod":"Note: this app can save its own copy (together with your data). The declared SHA-256 applies only to the originally distributed file.","net_h":"Network","net_none":"0 external requests declared","net_list":"External hosts declared or allowed by the security policy (CSP):","net_note":"Declared at build time by analysing the code; you can also check the Network tab of your browser tools.","net_unknown":"Information unavailable: the file has no transparency descriptor.","store_h":"Local storage","store_none":"No keys in localStorage.","store_sum":"{n} keys · {size}","store_key":"Key","store_size":"Size","store_more":"…and {n} more keys","store_idb":"The app also uses IndexedDB, which is not included in the backup.","store_note":"Data stays in this browser; nothing is sent.","perm_h":"Permissions and APIs used","perm_none":"No sensitive APIs detected.","perm_note":"Detected statically in the source code; for sensitive ones the browser asks for your consent.","perm_cam":"Camera / microphone","perm_geo":"Location","perm_rtc":"Direct browser-to-browser connections (WebRTC)","perm_share":"Sharing (Web Share)","perm_notif":"Notifications","perm_tts":"Speech synthesis","perm_stt":"Speech recognition","perm_clip":"Clipboard","perm_sw":"Service worker (install / offline)","perm_idb":"IndexedDB","perm_ls":"localStorage","perm_crypto":"Cryptography (Web Crypto)","perm_webgl":"WebGL","perm_webgpu":"WebGPU","perm_worker":"Web Worker","perm_bc":"BroadcastChannel","file_h":"File","file_size":"Size: {size}","file_hash":"Declared SHA-256:","file_nohash":"No checksum is declared in this file.","file_how_h":"How to verify","file_how":"Choose the downloaded file: its SHA-256 is computed after blanking the hash fields (data-fff-hash and \"sha256\") and compared with the declared value. The same computation in a terminal:","verify_btn":"Verify a downloaded file…","verify_ok":"Match: the file is identical to the declared one.","verify_bad":"No match. Computed: {got}","verify_err":"The file could not be read.","verify_cmd":"Verification command","bk_h":"Backup","bk_hint":"A .fff.json file with the app's localStorage data. The encrypted variant uses AES-GCM 256 with a key derived via PBKDF2-SHA256 ({iter} iterations); the password cannot be recovered.","bk_export":"Export","bk_export_enc":"Export encrypted…","bk_import":"Import…","bk_wipe":"Delete app data","bk_pw":"Password (min. {n} characters)","bk_pw2":"Repeat password","bk_go":"Export encrypted","bk_pw_file":"File password","bk_import_go":"Import","pw_mismatch":"Passwords do not match.","ok_export":"Exported: {file} ({n} keys).","ok_export_enc":"Exported encrypted: {file} ({n} keys).","ok_import":"Imported {n} keys. Reloading the page…","ok_wipe":"Deleted {n} keys. Reloading the page…","nothing_to_wipe":"There is no data to delete.","enter_pw":"The file {file} is encrypted: enter the password.","cancelled":"Cancelled.","kit_line":"fff-kit v{v} · modules: {mods}","install":"Install the app","bk_sync":"Sync between devices","bk_history":"History (time machine)"},"fr":{"title":"Transparence","open_hint":"Ouvrir l’étiquette de transparence","close":"Fermer","disabled":"Les fonctions du kit sont désactivées pour cette application : {reason}","self_mod":"Attention : cette application peut enregistrer sa propre copie (avec vos données). Le SHA-256 déclaré ne vaut que pour le fichier distribué à l’origine.","net_h":"Réseau","net_none":"0 requête externe déclarée","net_list":"Hôtes externes déclarés ou autorisés par la politique de sécurité (CSP) :","net_note":"Déclaré à la construction par analyse du code ; vous pouvez aussi vérifier dans l’onglet Réseau des outils du navigateur.","net_unknown":"Informations indisponibles : le fichier ne contient pas de descripteur de transparence.","store_h":"Stockage local","store_none":"Aucune clé dans localStorage.","store_sum":"{n} clés · {size}","store_key":"Clé","store_size":"Taille","store_more":"…et {n} clés de plus","store_idb":"L’application utilise aussi IndexedDB, non inclus dans la sauvegarde.","store_note":"Les données restent dans ce navigateur ; rien n’est envoyé.","perm_h":"Autorisations et API utilisées","perm_none":"Aucune API sensible détectée.","perm_note":"Détectées statiquement dans le code source ; pour les API sensibles, le navigateur demande votre accord.","perm_cam":"Caméra / microphone","perm_geo":"Localisation","perm_rtc":"Connexions directes entre navigateurs (WebRTC)","perm_share":"Partage (Web Share)","perm_notif":"Notifications","perm_tts":"Synthèse vocale","perm_stt":"Reconnaissance vocale","perm_clip":"Presse-papiers","perm_sw":"Service worker (installation / hors ligne)","perm_idb":"IndexedDB","perm_ls":"localStorage","perm_crypto":"Cryptographie (Web Crypto)","perm_webgl":"WebGL","perm_webgpu":"WebGPU","perm_worker":"Web Worker","perm_bc":"BroadcastChannel","file_h":"Fichier","file_size":"Taille : {size}","file_hash":"SHA-256 déclaré :","file_nohash":"Aucune somme de contrôle n’est déclarée dans ce fichier.","file_how_h":"Comment vérifier","file_how":"Choisissez le fichier téléchargé : son SHA-256 est calculé après avoir vidé les champs de hachage (data-fff-hash et « sha256 ») puis comparé à la valeur déclarée. Même calcul dans un terminal :","verify_btn":"Vérifier un fichier téléchargé…","verify_ok":"Concordance : le fichier est identique à celui déclaré.","verify_bad":"Pas de concordance. Calculé : {got}","verify_err":"Le fichier n’a pas pu être lu.","verify_cmd":"Commande de vérification","bk_h":"Sauvegarde","bk_hint":"Un fichier .fff.json avec les données localStorage de l’application. La variante chiffrée utilise AES-GCM 256 avec une clé dérivée par PBKDF2-SHA256 ({iter} itérations) ; le mot de passe est irrécupérable.","bk_export":"Exporter","bk_export_enc":"Exporter chiffré…","bk_import":"Importer…","bk_wipe":"Supprimer les données de l’application","bk_pw":"Mot de passe (min. {n} caractères)","bk_pw2":"Répéter le mot de passe","bk_go":"Exporter chiffré","bk_pw_file":"Mot de passe du fichier","bk_import_go":"Importer","pw_mismatch":"Les mots de passe ne correspondent pas.","ok_export":"Exporté : {file} ({n} clés).","ok_export_enc":"Exporté chiffré : {file} ({n} clés).","ok_import":"{n} clés importées. Rechargement de la page…","ok_wipe":"{n} clés supprimées. Rechargement de la page…","nothing_to_wipe":"Aucune donnée à supprimer.","enter_pw":"Le fichier {file} est chiffré : saisissez le mot de passe.","cancelled":"Annulé.","kit_line":"fff-kit v{v} · modules : {mods}","install":"Installer l’application","bk_sync":"Synchroniser entre appareils","bk_history":"Historique (machine à remonter le temps)"},"it":{"title":"Trasparenza","open_hint":"Apri l’etichetta di trasparenza","close":"Chiudi","disabled":"Le funzioni del kit sono disattivate per questa app: {reason}","self_mod":"Attenzione: questa app può salvare una propria copia (insieme ai tuoi dati). Lo SHA-256 dichiarato vale solo per il file distribuito in origine.","net_h":"Rete","net_none":"0 richieste esterne dichiarate","net_list":"Host esterni dichiarati o consentiti dalla politica di sicurezza (CSP):","net_note":"Dichiarato in fase di costruzione tramite analisi del codice; puoi controllare anche nella scheda Rete degli strumenti del browser.","net_unknown":"Informazioni non disponibili: il file non contiene il descrittore di trasparenza.","store_h":"Archiviazione locale","store_none":"Nessuna chiave in localStorage.","store_sum":"{n} chiavi · {size}","store_key":"Chiave","store_size":"Dimensione","store_more":"…e altre {n} chiavi","store_idb":"L’app usa anche IndexedDB, non incluso nel backup.","store_note":"I dati restano in questo browser; non viene inviato nulla.","perm_h":"Permessi e API usati","perm_none":"Nessuna API sensibile rilevata.","perm_note":"Rilevate in modo statico nel codice sorgente; per quelle sensibili il browser chiede il tuo consenso.","perm_cam":"Fotocamera / microfono","perm_geo":"Posizione","perm_rtc":"Connessioni dirette tra browser (WebRTC)","perm_share":"Condivisione (Web Share)","perm_notif":"Notifiche","perm_tts":"Sintesi vocale","perm_stt":"Riconoscimento vocale","perm_clip":"Appunti","perm_sw":"Service worker (installazione / offline)","perm_idb":"IndexedDB","perm_ls":"localStorage","perm_crypto":"Crittografia (Web Crypto)","perm_webgl":"WebGL","perm_webgpu":"WebGPU","perm_worker":"Web Worker","perm_bc":"BroadcastChannel","file_h":"File","file_size":"Dimensione: {size}","file_hash":"SHA-256 dichiarato:","file_nohash":"In questo file non è dichiarata alcuna somma di controllo.","file_how_h":"Come verificare","file_how":"Scegli il file scaricato: ne viene calcolato lo SHA-256 dopo aver svuotato i campi hash (data-fff-hash e «sha256») e confrontato con il valore dichiarato. Lo stesso calcolo da terminale:","verify_btn":"Verifica un file scaricato…","verify_ok":"Corrisponde: il file è identico a quello dichiarato.","verify_bad":"Non corrisponde. Calcolato: {got}","verify_err":"Impossibile leggere il file.","verify_cmd":"Comando di verifica","bk_h":"Copia di sicurezza","bk_hint":"Un file .fff.json con i dati localStorage dell’app. La variante cifrata usa AES-GCM 256 con chiave derivata tramite PBKDF2-SHA256 ({iter} iterazioni); la password non è recuperabile.","bk_export":"Esporta","bk_export_enc":"Esporta cifrato…","bk_import":"Importa…","bk_wipe":"Elimina i dati dell’app","bk_pw":"Password (min. {n} caratteri)","bk_pw2":"Ripeti la password","bk_go":"Esporta cifrato","bk_pw_file":"Password del file","bk_import_go":"Importa","pw_mismatch":"Le password non coincidono.","ok_export":"Esportato: {file} ({n} chiavi).","ok_export_enc":"Esportato cifrato: {file} ({n} chiavi).","ok_import":"Importate {n} chiavi. Ricarico la pagina…","ok_wipe":"Eliminate {n} chiavi. Ricarico la pagina…","nothing_to_wipe":"Non ci sono dati da eliminare.","enter_pw":"Il file {file} è cifrato: inserisci la password.","cancelled":"Annullato.","kit_line":"fff-kit v{v} · moduli: {mods}","install":"Installa l’app","bk_sync":"Sincronizza tra dispositivi","bk_history":"Cronologia (macchina del tempo)"},"es":{"title":"Transparencia","open_hint":"Abrir la etiqueta de transparencia","close":"Cerrar","disabled":"Las funciones del kit están desactivadas para esta aplicación: {reason}","self_mod":"Atención: esta aplicación puede guardar su propia copia (junto con tus datos). El SHA-256 declarado solo vale para el archivo distribuido originalmente.","net_h":"Red","net_none":"0 solicitudes externas declaradas","net_list":"Hosts externos declarados o permitidos por la política de seguridad (CSP):","net_note":"Declarado al construir el archivo mediante análisis del código; también puedes comprobarlo en la pestaña Red de las herramientas del navegador.","net_unknown":"Información no disponible: el archivo no contiene el descriptor de transparencia.","store_h":"Almacenamiento local","store_none":"Ninguna clave en localStorage.","store_sum":"{n} claves · {size}","store_key":"Clave","store_size":"Tamaño","store_more":"…y {n} claves más","store_idb":"La aplicación también usa IndexedDB, que no se incluye en la copia de seguridad.","store_note":"Los datos permanecen en este navegador; no se envía nada.","perm_h":"Permisos y API usadas","perm_none":"No se detectaron API sensibles.","perm_note":"Detectadas de forma estática en el código fuente; para las sensibles, el navegador pide tu consentimiento.","perm_cam":"Cámara / micrófono","perm_geo":"Ubicación","perm_rtc":"Conexiones directas entre navegadores (WebRTC)","perm_share":"Compartir (Web Share)","perm_notif":"Notificaciones","perm_tts":"Síntesis de voz","perm_stt":"Reconocimiento de voz","perm_clip":"Portapapeles","perm_sw":"Service worker (instalación / sin conexión)","perm_idb":"IndexedDB","perm_ls":"localStorage","perm_crypto":"Criptografía (Web Crypto)","perm_webgl":"WebGL","perm_webgpu":"WebGPU","perm_worker":"Web Worker","perm_bc":"BroadcastChannel","file_h":"Archivo","file_size":"Tamaño: {size}","file_hash":"SHA-256 declarado:","file_nohash":"Este archivo no declara ninguna suma de verificación.","file_how_h":"Cómo verificar","file_how":"Elige el archivo descargado: se calcula su SHA-256 tras vaciar los campos de hash (data-fff-hash y «sha256») y se compara con el valor declarado. El mismo cálculo en una terminal:","verify_btn":"Verificar un archivo descargado…","verify_ok":"Coincide: el archivo es idéntico al declarado.","verify_bad":"No coincide. Calculado: {got}","verify_err":"No se pudo leer el archivo.","verify_cmd":"Comando de verificación","bk_h":"Copia de seguridad","bk_hint":"Un archivo .fff.json con los datos de localStorage de la aplicación. La variante cifrada usa AES-GCM 256 con clave derivada mediante PBKDF2-SHA256 ({iter} iteraciones); la contraseña no se puede recuperar.","bk_export":"Exportar","bk_export_enc":"Exportar cifrado…","bk_import":"Importar…","bk_wipe":"Borrar los datos de la aplicación","bk_pw":"Contraseña (mín. {n} caracteres)","bk_pw2":"Repite la contraseña","bk_go":"Exportar cifrado","bk_pw_file":"Contraseña del archivo","bk_import_go":"Importar","pw_mismatch":"Las contraseñas no coinciden.","ok_export":"Exportado: {file} ({n} claves).","ok_export_enc":"Exportado cifrado: {file} ({n} claves).","ok_import":"{n} claves importadas. Recargando la página…","ok_wipe":"{n} claves borradas. Recargando la página…","nothing_to_wipe":"No hay datos que borrar.","enter_pw":"El archivo {file} está cifrado: introduce la contraseña.","cancelled":"Cancelado.","kit_line":"fff-kit v{v} · módulos: {mods}","install":"Instalar la aplicación","bk_sync":"Sincronizar entre dispositivos","bk_history":"Historial (máquina del tiempo)"},"pt":{"title":"Transparência","open_hint":"Abrir a etiqueta de transparência","close":"Fechar","disabled":"As funções do kit estão desativadas para esta aplicação: {reason}","self_mod":"Atenção: esta aplicação pode guardar a sua própria cópia (juntamente com os seus dados). O SHA-256 declarado aplica-se apenas ao ficheiro distribuído originalmente.","net_h":"Rede","net_none":"0 pedidos externos declarados","net_list":"Anfitriões externos declarados ou permitidos pela política de segurança (CSP):","net_note":"Declarado na construção do ficheiro, por análise do código; pode também verificar no separador Rede das ferramentas do navegador.","net_unknown":"Informação indisponível: o ficheiro não contém o descritor de transparência.","store_h":"Armazenamento local","store_none":"Nenhuma chave em localStorage.","store_sum":"{n} chaves · {size}","store_key":"Chave","store_size":"Tamanho","store_more":"…e mais {n} chaves","store_idb":"A aplicação usa também IndexedDB, que não está incluído na cópia de segurança.","store_note":"Os dados ficam neste navegador; nada é enviado.","perm_h":"Permissões e APIs usadas","perm_none":"Não foram detetadas APIs sensíveis.","perm_note":"Detetadas de forma estática no código-fonte; para as sensíveis, o navegador pede o seu consentimento.","perm_cam":"Câmara / microfone","perm_geo":"Localização","perm_rtc":"Ligações diretas entre navegadores (WebRTC)","perm_share":"Partilha (Web Share)","perm_notif":"Notificações","perm_tts":"Síntese de voz","perm_stt":"Reconhecimento de voz","perm_clip":"Área de transferência","perm_sw":"Service worker (instalação / offline)","perm_idb":"IndexedDB","perm_ls":"localStorage","perm_crypto":"Criptografia (Web Crypto)","perm_webgl":"WebGL","perm_webgpu":"WebGPU","perm_worker":"Web Worker","perm_bc":"BroadcastChannel","file_h":"Ficheiro","file_size":"Tamanho: {size}","file_hash":"SHA-256 declarado:","file_nohash":"Este ficheiro não declara nenhuma soma de verificação.","file_how_h":"Como verificar","file_how":"Escolha o ficheiro descarregado: o seu SHA-256 é calculado após esvaziar os campos de hash (data-fff-hash e «sha256») e comparado com o valor declarado. O mesmo cálculo num terminal:","verify_btn":"Verificar um ficheiro descarregado…","verify_ok":"Coincide: o ficheiro é idêntico ao declarado.","verify_bad":"Não coincide. Calculado: {got}","verify_err":"Não foi possível ler o ficheiro.","verify_cmd":"Comando de verificação","bk_h":"Cópia de segurança","bk_hint":"Um ficheiro .fff.json com os dados de localStorage da aplicação. A variante cifrada usa AES-GCM 256 com chave derivada por PBKDF2-SHA256 ({iter} iterações); a palavra-passe não pode ser recuperada.","bk_export":"Exportar","bk_export_enc":"Exportar cifrado…","bk_import":"Importar…","bk_wipe":"Apagar os dados da aplicação","bk_pw":"Palavra-passe (mín. {n} caracteres)","bk_pw2":"Repita a palavra-passe","bk_go":"Exportar cifrado","bk_pw_file":"Palavra-passe do ficheiro","bk_import_go":"Importar","pw_mismatch":"As palavras-passe não coincidem.","ok_export":"Exportado: {file} ({n} chaves).","ok_export_enc":"Exportado cifrado: {file} ({n} chaves).","ok_import":"{n} chaves importadas. A recarregar a página…","ok_wipe":"{n} chaves apagadas. A recarregar a página…","nothing_to_wipe":"Não há dados para apagar.","enter_pw":"O ficheiro {file} está cifrado: introduza a palavra-passe.","cancelled":"Cancelado.","kit_line":"fff-kit v{v} · módulos: {mods}","install":"Instalar a aplicação","bk_sync":"Sincronizar entre dispositivos","bk_history":"Histórico (máquina do tempo)"},"hu":{"title":"Átláthatóság","open_hint":"Az átláthatósági címke megnyitása","close":"Bezárás","disabled":"A kit funkciói ki vannak kapcsolva ennél az alkalmazásnál: {reason}","self_mod":"Figyelem: ez az alkalmazás képes saját másolatot menteni (az adataiddal együtt). A megadott SHA-256 csak az eredetileg terjesztett fájlra érvényes.","net_h":"Hálózat","net_none":"0 külső kérés megadva","net_list":"A biztonsági irányelv (CSP) által megadott vagy engedélyezett külső gazdák:","net_note":"Az összeállításkor a kód elemzésével megadva; a böngésző eszközeinek Hálózat lapján is ellenőrizheted.","net_unknown":"Az információ nem érhető el: a fájl nem tartalmaz átláthatósági leírót.","store_h":"Helyi tárolás","store_none":"Nincs kulcs a localStorage-ban.","store_sum":"{n} kulcs · {size}","store_key":"Kulcs","store_size":"Méret","store_more":"…és még {n} kulcs","store_idb":"Az alkalmazás IndexedDB-t is használ, amely nem része a biztonsági mentésnek.","store_note":"Az adatok ebben a böngészőben maradnak; semmi sem kerül elküldésre.","perm_h":"Használt engedélyek és API-k","perm_none":"Nem található érzékeny API.","perm_note":"Statikusan, a forráskódban észlelve; az érzékenyeknél a böngésző a hozzájárulásodat kéri.","perm_cam":"Kamera / mikrofon","perm_geo":"Helyadat","perm_rtc":"Közvetlen böngésző–böngésző kapcsolatok (WebRTC)","perm_share":"Megosztás (Web Share)","perm_notif":"Értesítések","perm_tts":"Beszédszintézis","perm_stt":"Beszédfelismerés","perm_clip":"Vágólap","perm_sw":"Service worker (telepítés / offline)","perm_idb":"IndexedDB","perm_ls":"localStorage","perm_crypto":"Kriptográfia (Web Crypto)","perm_webgl":"WebGL","perm_webgpu":"WebGPU","perm_worker":"Web Worker","perm_bc":"BroadcastChannel","file_h":"Fájl","file_size":"Méret: {size}","file_hash":"Megadott SHA-256:","file_nohash":"Ebben a fájlban nincs megadva ellenőrző összeg.","file_how_h":"Hogyan ellenőrizd","file_how":"Válaszd ki a letöltött fájlt: a program kiszámolja az SHA-256 értéket a hash mezők (data-fff-hash és „sha256”) kiürítése után, és összeveti a megadottal. Ugyanez terminálban:","verify_btn":"Letöltött fájl ellenőrzése…","verify_ok":"Egyezik: a fájl megegyezik a megadottal.","verify_bad":"Nem egyezik. Számított: {got}","verify_err":"A fájlt nem sikerült beolvasni.","verify_cmd":"Ellenőrző parancs","bk_h":"Biztonsági mentés","bk_hint":"Egy .fff.json fájl az alkalmazás localStorage-adataival. A titkosított változat AES-GCM 256-ot használ, PBKDF2-SHA256-tal ({iter} iteráció) származtatott kulccsal; a jelszó nem állítható vissza.","bk_export":"Exportálás","bk_export_enc":"Titkosított exportálás…","bk_import":"Importálás…","bk_wipe":"Az alkalmazás adatainak törlése","bk_pw":"Jelszó (legalább {n} karakter)","bk_pw2":"Jelszó újra","bk_go":"Titkosított exportálás","bk_pw_file":"A fájl jelszava","bk_import_go":"Importálás","pw_mismatch":"A jelszavak nem egyeznek.","ok_export":"Exportálva: {file} ({n} kulcs).","ok_export_enc":"Titkosítva exportálva: {file} ({n} kulcs).","ok_import":"{n} kulcs importálva. Az oldal újratöltése…","ok_wipe":"{n} kulcs törölve. Az oldal újratöltése…","nothing_to_wipe":"Nincs törölhető adat.","enter_pw":"A(z) {file} fájl titkosított: add meg a jelszót.","cancelled":"Megszakítva.","kit_line":"fff-kit v{v} · modulok: {mods}","install":"Alkalmazás telepítése","bk_sync":"Szinkronizálás eszközök között","bk_history":"Előzmények (időgép)"},"de":{"title":"Transparenz","open_hint":"Transparenz-Etikett öffnen","close":"Schließen","disabled":"Die Kit-Funktionen sind für diese App deaktiviert: {reason}","self_mod":"Hinweis: Diese App kann eine eigene Kopie speichern (samt deiner Daten). Der angegebene SHA-256 gilt nur für die ursprünglich verteilte Datei.","net_h":"Netzwerk","net_none":"0 externe Anfragen angegeben","net_list":"Externe Hosts, die angegeben oder von der Sicherheitsrichtlinie (CSP) erlaubt sind:","net_note":"Beim Erstellen per Code-Analyse angegeben; du kannst es auch im Netzwerk-Tab der Browser-Werkzeuge prüfen.","net_unknown":"Informationen nicht verfügbar: Die Datei enthält keinen Transparenz-Deskriptor.","store_h":"Lokaler Speicher","store_none":"Keine Schlüssel in localStorage.","store_sum":"{n} Schlüssel · {size}","store_key":"Schlüssel","store_size":"Größe","store_more":"…und {n} weitere Schlüssel","store_idb":"Die App nutzt auch IndexedDB, das nicht in der Sicherung enthalten ist.","store_note":"Die Daten bleiben in diesem Browser; nichts wird gesendet.","perm_h":"Verwendete Berechtigungen und APIs","perm_none":"Keine sensiblen APIs erkannt.","perm_note":"Statisch im Quelltext erkannt; bei sensiblen fragt der Browser nach deiner Zustimmung.","perm_cam":"Kamera / Mikrofon","perm_geo":"Standort","perm_rtc":"Direkte Browser-zu-Browser-Verbindungen (WebRTC)","perm_share":"Teilen (Web Share)","perm_notif":"Benachrichtigungen","perm_tts":"Sprachsynthese","perm_stt":"Spracherkennung","perm_clip":"Zwischenablage","perm_sw":"Service Worker (Installation / offline)","perm_idb":"IndexedDB","perm_ls":"localStorage","perm_crypto":"Kryptografie (Web Crypto)","perm_webgl":"WebGL","perm_webgpu":"WebGPU","perm_worker":"Web Worker","perm_bc":"BroadcastChannel","file_h":"Datei","file_size":"Größe: {size}","file_hash":"Angegebener SHA-256:","file_nohash":"In dieser Datei ist keine Prüfsumme angegeben.","file_how_h":"So prüfst du","file_how":"Wähle die heruntergeladene Datei: Ihr SHA-256 wird nach dem Leeren der Hash-Felder (data-fff-hash und „sha256“) berechnet und mit dem angegebenen Wert verglichen. Dieselbe Berechnung im Terminal:","verify_btn":"Heruntergeladene Datei prüfen…","verify_ok":"Übereinstimmung: Die Datei ist identisch mit der angegebenen.","verify_bad":"Keine Übereinstimmung. Berechnet: {got}","verify_err":"Die Datei konnte nicht gelesen werden.","verify_cmd":"Prüfbefehl","bk_h":"Sicherung","bk_hint":"Eine .fff.json-Datei mit den localStorage-Daten der App. Die verschlüsselte Variante nutzt AES-GCM 256 mit einem per PBKDF2-SHA256 ({iter} Iterationen) abgeleiteten Schlüssel; das Passwort ist nicht wiederherstellbar.","bk_export":"Exportieren","bk_export_enc":"Verschlüsselt exportieren…","bk_import":"Importieren…","bk_wipe":"App-Daten löschen","bk_pw":"Passwort (mind. {n} Zeichen)","bk_pw2":"Passwort wiederholen","bk_go":"Verschlüsselt exportieren","bk_pw_file":"Passwort der Datei","bk_import_go":"Importieren","pw_mismatch":"Die Passwörter stimmen nicht überein.","ok_export":"Exportiert: {file} ({n} Schlüssel).","ok_export_enc":"Verschlüsselt exportiert: {file} ({n} Schlüssel).","ok_import":"{n} Schlüssel importiert. Seite wird neu geladen…","ok_wipe":"{n} Schlüssel gelöscht. Seite wird neu geladen…","nothing_to_wipe":"Keine Daten zum Löschen vorhanden.","enter_pw":"Die Datei {file} ist verschlüsselt: Passwort eingeben.","cancelled":"Abgebrochen.","kit_line":"fff-kit v{v} · Module: {mods}","install":"App installieren","bk_sync":"Zwischen Geräten synchronisieren","bk_history":"Verlauf (Zeitmaschine)"}}}</script>
+<!--fff:kit:end-->
+<!--fff:info:start-->
+<script type="application/json" id="fff-info">{"schema":1,"slug":"index-fara-frontiere","name":"Index fără frontiere — catalog de single-file HTML apps","version":"1.0.0","updated":"2026-11-14","description":"Catalog single-file HTML: colecția proprie de pe chiuta.github.io, plus resursele externe relevante. Offline-first, zero dependențe, zero telemetrie, un singur fișier.","egress":[],"permissions":[],"storageKeys":[],"sizeBytes":122485,"sha256":"384203d50d8860a8a2a141db3c9267a0585f33330cb7c0d376c5788b3716814e","csp":{"present":true,"directives":{"default-src":"'none'","style-src":"'unsafe-inline'","script-src":"sha256×2","img-src":"'self' data:","connect-src":"'none'","base-uri":"'none'","form-action":"'none'"},"scriptInline":"hash","connect":"'none'"},"features":{"export":false,"import":false,"i18n":["ro","en"],"pwa":{"manifest":false,"serviceWorker":false},"modules":["core","ux","label"]},"kit":{"version":"1.5.0","modules":["core","ux","label"]},"selfSerializing":false}</script>
+<!--fff:info:end-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="color-scheme" content="dark light">
+<meta name="application-version" content="1.0.0">
+<meta name="last-updated" content="2026-11-14">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'sha256-xyoc0HjM28/6BQ0cQp9GVQtYKr7Kgfq+vClksdyCn2o=' 'sha256-hW406NNsehwSPlQBe7/17c2Zoa85kMe/wDrtlpNC38M='; img-src 'self' data:; connect-src 'none'; base-uri 'none'; form-action 'none';">
+<title>Index fără frontiere — catalog de single-file HTML apps</title>
+<meta name="description" content="Catalog single-file HTML: colecția proprie de pe chiuta.github.io, plus resursele externe relevante. Offline-first, zero dependențe, zero telemetrie, un singur fișier.">
+<style>
+  :root{
+    --bg:#07060b; --bg-elevated:#0d0b16; --bg-card:#131019; --bg-card-hover:#1b1728;
+    --border:#242032; --border-strong:#383150;
+    --text:#f1eef9; --text-muted:#9791ac; --text-faint:#867e94;
+    --accent-own:#7a72f2; --accent-own-dim:rgba(122,114,242,.14);
+    --accent-ext:#edaa4a; --accent-ext-dim:rgba(237,170,74,.14);
+    --accent-zero:#52d68a;
+    --radius:12px;
+    --mono:ui-monospace,"SF Mono","Cascadia Code","Roboto Mono",Consolas,monospace;
+    --sans:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  }
+  @media (prefers-color-scheme: light){
+    :root{
+      --bg:#f7f5f1; --bg-elevated:#ffffff; --bg-card:#ffffff; --bg-card-hover:#f1eeff;
+      --border:#e6e1f0; --border-strong:#cec5e8;
+      --text:#171320; --text-muted:#584f70; --text-faint:#726c84;
+      --accent-own:#5a4dd1; --accent-ext:#8f5a06;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#07060b; --bg-elevated:#0d0b16; --bg-card:#131019; --bg-card-hover:#1b1728;
+    --border:#242032; --border-strong:#383150;
+    --text:#f1eef9; --text-muted:#9791ac; --text-faint:#867e94;
+    --accent-own:#7a72f2; --accent-ext:#edaa4a;
+  }
+  :root[data-theme="light"]{
+    --bg:#f7f5f1; --bg-elevated:#ffffff; --bg-card:#ffffff; --bg-card-hover:#f1eeff;
+    --border:#e6e1f0; --border-strong:#cec5e8;
+    --text:#171320; --text-muted:#584f70; --text-faint:#726c84;
+    --accent-own:#5a4dd1; --accent-ext:#8f5a06;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--bg); color:var(--text); font-family:var(--sans);
+    line-height:1.55; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+    transition:background-color .2s ease, color .2s ease;
+  }
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important;}
+  }
+  a{color:inherit;}
+  .wrap{max-width:1080px; margin:0 auto; padding:0 20px;}
+  ::selection{background:var(--accent-own); color:#fff;}
+
+  /* header */
+  header.top{
+    border-bottom:1px solid var(--border);
+    position:sticky; top:0; background:color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter:blur(10px); z-index:10;
+  }
+  .top-inner{
+    display:flex; align-items:center; justify-content:space-between; gap:12px;
+    padding:14px 20px;
+  }
+  .brand{
+    font-family:var(--mono); font-size:14px; font-weight:600; letter-spacing:.02em;
+    display:flex; align-items:center; gap:8px; white-space:nowrap;
+  }
+  .brand .dot{color:var(--accent-own);}
+  .top-actions{display:flex; align-items:center; gap:8px;}
+  .icon-btn{
+    font-family:var(--mono); font-size:13px; background:var(--bg-card); color:var(--text-muted);
+    border:1px solid var(--border); border-radius:8px; padding:7px 11px; cursor:pointer;
+    transition:border-color .15s ease, color .15s ease, background .15s ease;
+  }
+  .icon-btn:hover{border-color:var(--border-strong); color:var(--text); background:var(--bg-card-hover);}
+  .icon-btn:focus-visible{outline:2px solid var(--accent-own); outline-offset:2px;}
+
+  /* hero */
+  .hero{padding:56px 0 28px;}
+  .eyebrow{
+    font-family:var(--mono); font-size:12px; letter-spacing:.12em; text-transform:uppercase;
+    color:var(--text-faint); margin:0 0 14px;
+  }
+  .eyebrow .sep{color:var(--accent-own); margin:0 6px;}
+  h1{
+    font-family:var(--mono); font-size:clamp(28px,6vw,44px); line-height:1.08;
+    letter-spacing:-.01em; margin:0 0 14px; font-weight:700;
+  }
+  .sub{
+    font-size:16px; color:var(--text-muted); max-width:58ch; margin:0 0 22px;
+  }
+  .terminal-line{
+    font-family:var(--mono); font-size:13px; color:var(--accent-own);
+    background:var(--bg-card); border:1px solid var(--border); border-radius:8px;
+    padding:10px 14px; display:inline-flex; align-items:center; gap:8px; max-width:100%;
+    overflow:hidden;
+  }
+  .terminal-line .prompt{color:var(--text-faint);}
+  .terminal-line .cursor{
+    display:inline-block; width:7px; height:15px; background:var(--accent-own);
+    animation:blink 1s steps(1) infinite;
+  }
+  @keyframes blink{50%{opacity:0;}}
+  #term-text{white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+
+  .stats{
+    display:flex; flex-wrap:wrap; gap:28px; margin-top:32px; padding-top:24px;
+    border-top:1px solid var(--border);
+  }
+  .stat b{
+    display:block; font-family:var(--mono); font-size:26px; font-weight:700; line-height:1;
+  }
+  .stat span{
+    display:block; font-size:12px; color:var(--text-faint); margin-top:6px;
+    letter-spacing:.03em;
+  }
+  .stat.zero b{color:var(--accent-zero);}
+  :root[data-theme="light"] .stat.zero b{color:#0f6b3a}
+  @media (prefers-color-scheme:light){:root:not([data-theme="dark"]) .stat.zero b{color:#0f6b3a}}
+
+  /* search */
+  .search-wrap{margin:36px 0 8px;}
+  .search-box{
+    display:flex; align-items:center; gap:10px; background:var(--bg-card);
+    border:1px solid var(--border); border-radius:10px; padding:12px 14px;
+  }
+  .search-box:focus-within{border-color:var(--accent-own);}
+  .search-box svg{flex:none; opacity:.55;}
+  #search{
+    border:none; outline:none; background:transparent; color:var(--text);
+    font-family:var(--sans); font-size:15px; width:100%;
+  }
+  #search::placeholder{color:var(--text-faint);}
+  .lang-note{font-size:12px; color:var(--text-faint); margin:10px 2px 0;}
+
+  /* sections */
+  section.list{margin-top:48px;}
+  .list-head{
+    display:flex; align-items:baseline; justify-content:space-between; gap:12px;
+    margin-bottom:18px; flex-wrap:wrap;
+  }
+  .list-head h2{
+    font-family:var(--mono); font-size:20px; margin:0; display:flex; align-items:center; gap:10px;
+  }
+  .list-head h2 .glyph{font-size:16px;}
+  .list-head .count{
+    font-family:var(--mono); font-size:13px; color:var(--text-faint);
+    background:var(--bg-card); border:1px solid var(--border); border-radius:20px; padding:2px 10px;
+  }
+  .list-note{font-size:13px; color:var(--text-faint); margin:0 0 20px; max-width:70ch;}
+
+  .grid{
+    display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:14px;
+  }
+  .card{
+    display:block; text-decoration:none; background:var(--bg-card);
+    border:1px solid var(--border); border-radius:var(--radius); padding:18px;
+    transition:transform .15s ease, border-color .15s ease, background .15s ease, box-shadow .15s ease;
+  }
+  .card:hover{transform:translateY(-3px); background:var(--bg-card-hover);}
+  .card:focus-visible{outline:2px solid var(--accent-own); outline-offset:2px;}
+  .card[data-kind="own"]:hover{border-color:var(--accent-own); box-shadow:0 10px 28px -14px var(--accent-own-dim), 0 0 0 1px var(--accent-own-dim);}
+  .card[data-kind="ext"]:hover{border-color:var(--accent-ext); box-shadow:0 10px 28px -14px var(--accent-ext-dim), 0 0 0 1px var(--accent-ext-dim);}
+
+  .card-top{display:flex; align-items:center; justify-content:space-between; margin-bottom:10px;}
+  .glyph{font-family:var(--mono); line-height:1;}
+  .card[data-kind="own"] .glyph{color:var(--accent-own);}
+  .card[data-kind="ext"] .glyph{color:var(--accent-ext);}
+  .tag{
+    font-family:var(--mono); font-size:11px; letter-spacing:.02em; color:var(--text-faint);
+    background:var(--bg-elevated); border:1px solid var(--border); border-radius:20px;
+    padding:2px 9px;
+  }
+  .card h3{margin:0 0 6px; font-size:16px; font-weight:650;}
+  .card p{margin:0 0 14px; font-size:13.5px; color:var(--text-muted);}
+  .card .open{
+    font-family:var(--mono); font-size:12.5px; font-weight:600;
+    display:inline-flex; align-items:center; gap:5px;
+  }
+  .card[data-kind="own"] .open{color:var(--accent-own);}
+  .card[data-kind="ext"] .open{color:var(--accent-ext);}
+  .card .open .arrow{transition:transform .15s ease;}
+  .card:hover .open .arrow{transform:translateX(3px);}
+
+  .meta-card{
+    margin-top:14px; border:1px dashed var(--border-strong); border-radius:var(--radius);
+    padding:16px 18px; font-size:13px; color:var(--text-faint); background:transparent;
+  }
+  .meta-card b{color:var(--text-muted); font-family:var(--mono); font-weight:600;}
+
+  .empty-state{
+    font-family:var(--mono); font-size:13px; color:var(--text-faint);
+    border:1px dashed var(--border); border-radius:var(--radius); padding:24px; text-align:center;
+    display:none;
+  }
+
+  footer{
+    margin-top:64px; padding:28px 0 48px; border-top:1px solid var(--border);
+    font-size:12.5px; color:var(--text-faint); display:flex; flex-wrap:wrap;
+    gap:8px 18px; align-items:center; justify-content:space-between;
+  }
+  footer a{color:var(--text-muted); text-decoration:none; border-bottom:1px solid var(--border-strong);}
+  footer a:hover{color:var(--accent-own);}
+  .footer-links{display:flex; gap:16px; flex-wrap:wrap;}
+
+  noscript .ns-box{
+    max-width:1080px; margin:24px auto; padding:20px; border:1px solid var(--border);
+    border-radius:var(--radius); font-family:var(--sans);
+  }
+  noscript ul{padding-left:20px;}
+
+  @media (max-width:640px){
+    .hero{padding:40px 0 20px;}
+    .stats{gap:20px;}
+    footer{justify-content:flex-start;}
+  }
+</style>
+</head>
+<body>
+
+<noscript>
+  <div class="ns-box">
+    <h2>Index fără frontiere</h2>
+    <p>Fără JavaScript vezi doar lista simplă a colecției proprii:</p>
+    <ul>
+      <li><a href="https://chiuta.ro">OmniHost</a> — suită de productivitate, 141 module.</li>
+      <li><a href="https://alexio.tf">Printre inteligențe</a> — carte SF web interactivă.</li>
+      <li><a href="https://chiuta.github.io/AI-Liber">AI-Liber</a> — utilitare AI libere.</li>
+      <li><a href="https://chiuta.github.io/PromptVault">PromptVault</a> — manager de prompturi.</li>
+      <li><a href="https://chiuta.github.io/TranslateHub">TranslateHub</a> — traducere client-side.</li>
+      <li><a href="https://chiuta.github.io/VoiceAtelier">VoiceAtelier</a> — studio TTS.</li>
+      <li><a href="https://chiuta.github.io/FreeDetect">FreeDetect</a> — detector AI/plagiat.</li>
+      <li><a href="https://chiuta.github.io/AcademiSearch/">AcademiSearch</a> — căutare academică.</li>
+    </ul>
+  </div>
+</noscript>
+
+<header class="top">
+  <div class="top-inner">
+    <div class="brand"><span class="dot">◈</span> index fără frontiere</div>
+    <div class="top-actions">
+      <button class="icon-btn" id="lang-btn" type="button" aria-label="RO/EN — Schimbă limba / Switch language">RO/EN</button>
+      <button class="icon-btn" id="theme-btn" type="button" aria-label="Comută tema">◐</button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <p class="eyebrow" id="t-eyebrow">CATALOG <span class="sep">·</span> SINGLE-FILE HTML <span class="sep">·</span> 5 IULIE 2026</p>
+    <h1>Index fără frontiere</h1>
+    <p class="sub" id="t-sub">Aplicații single-file HTML: colecția mea, verificată direct de pe chiuta.github.io, plus tot ce am găsit relevant pe restul internetului.</p>
+    <div class="terminal-line">
+      <span class="prompt">indexăm →</span> <span id="term-text"></span><span class="cursor"></span>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><b id="stat-own">0</b><span id="t-stat-own">aplicații proprii</span></div>
+      <div class="stat"><b id="stat-ext">0</b><span id="t-stat-ext">resurse externe</span></div>
+      <div class="stat"><b>1</b><span id="t-stat-file">fișier, fără build</span></div>
+      <div class="stat zero"><b>0b↑</b><span id="t-stat-zero">trimis vreodată</span></div>
+    </div>
+  </section>
+
+  <div class="search-wrap">
+    <div class="search-box">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      <input type="text" id="search" placeholder="Caută după nume, categorie…" autocomplete="off">
+    </div>
+    <p class="lang-note" id="t-note">Un tag e clickabil: filtrează instant pe acea categorie.</p>
+  </div>
+
+  <section class="list" id="section-own">
+    <div class="list-head">
+      <h2><span class="glyph" style="color:var(--accent-own)">◈</span> <span id="t-h-own">Colecția mea</span></h2>
+      <span class="count"><span id="count-own">0</span> <span id="t-count-own-label">rezultate</span></span>
+    </div>
+    <p class="list-note" id="t-note-own">Repos publice, verificate direct din chiuta.github.io și github.com/chiuta pe 5 iulie 2026.</p>
+    <div class="grid" id="grid-own"></div>
+    <p class="empty-state" id="empty-own">nimic găsit — încearcă alt termen</p>
+    <div class="meta-card">
+      <b id="t-meta-b">meta ·</b> <span id="t-meta-text">chiar acest fișier. Catalogul se auto-include: e tot un single-file HTML, zero dependențe, zero telemetrie, fără build. Sursa completă e mai jos, în &lt;script&gt;.</span>
+    </div>
+  </section>
+
+  <section class="list" id="section-ext">
+    <div class="list-head">
+      <h2><span class="glyph" style="color:var(--accent-ext)">⌀</span> <span id="t-h-ext">Restul internetului</span></h2>
+      <span class="count"><span id="count-ext">0</span> <span id="t-count-ext-label">rezultate</span></span>
+    </div>
+    <p class="list-note" id="t-note-ext">Nimic din secțiunea asta nu-mi aparține. Verificate manual pe 5 iulie 2026 — nu neapărat exhaustive, genul e prea fragmentat pentru un index complet.</p>
+    <div class="grid" id="grid-ext"></div>
+    <p class="empty-state" id="empty-ext">nimic găsit — încearcă alt termen</p>
+  </section>
+
+  <footer>
+    <span id="t-footer">Index fără frontiere · construit de Claude la cererea lui Alexio · ultima verificare: 5 iulie 2026</span>
+    <span id="app-version">v1.0.0</span>
+    <span class="footer-links">
+      <a href="https://chiuta.github.io/" target="_blank" rel="noopener noreferrer">chiuta.github.io</a>
+      <a href="https://github.com/chiuta" target="_blank" rel="noopener noreferrer">github.com/chiuta</a>
+    </span>
+  </footer>
+</main>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ============================================================
+     DATE — editează direct aici ca să adaugi/schimbi intrări.
+     Fiecare intrare: name, url, tag (ro/en), tagline (ro/en).
+     isSelf = true pentru intrarea auto-referențială (nu-i link).
+     ============================================================ */
+
+  var OWN = [
+    { name:"OmniHost", url:"https://chiuta.ro",
+      tag:{ro:"suită · productivitate", en:"suite · productivity"},
+      tagline:{ro:"Suită completă de productivitate personală — 141 module. Fișierul e baza ta de date.",
+               en:"Complete personal productivity suite — 141 modules. The file is your database."} },
+    { name:"Printre inteligențe", url:"https://alexio.tf",
+      tag:{ro:"literatură SF", en:"SF literature"},
+      tagline:{ro:"Carte SF web interactivă, inspirată de misiunea NASA Artemis 2.",
+               en:"Interactive SF web book inspired by NASA Artemis 2."} },
+    { name:"AI-Liber", url:"https://chiuta.github.io/AI-Liber",
+      tag:{ro:"AI · cercetare", en:"AI · research"},
+      tagline:{ro:"Utilitare AI libere pentru scriere, analiză și cercetare.",
+               en:"Open, libre AI utilities for writing, analysis and research."} },
+    { name:"PromptVault", url:"https://chiuta.github.io/PromptVault",
+      tag:{ro:"AI · productivitate", en:"AI · productivity"},
+      tagline:{ro:"Manager local-first de prompturi pentru fluxuri AI.",
+               en:"Local-first prompt manager for AI workflows."} },
+    { name:"TranslateHub", url:"https://chiuta.github.io/TranslateHub",
+      tag:{ro:"limbă · traducere", en:"language · translation"},
+      tagline:{ro:"Hub de traducere client-side, zeci de limbi.",
+               en:"Client-side translation hub across dozens of languages."} },
+    { name:"VoiceAtelier", url:"https://chiuta.github.io/VoiceAtelier",
+      tag:{ro:"voce · TTS", en:"voice · TTS"},
+      tagline:{ro:"Studio TTS multi-voce, sinteză vocală multilingvă.",
+               en:"TTS studio for multi-voice, multilingual speech synthesis."} },
+    { name:"FreeDetect", url:"https://chiuta.github.io/FreeDetect",
+      tag:{ro:"AI · detecție", en:"AI · detection"},
+      tagline:{ro:"Detector de text generat de AI și plagiat, rulează integral în browser.",
+               en:"AI-generated text and plagiarism detector, runs in-browser."} },
+    { name:"AcademiSearch", url:"https://chiuta.github.io/AcademiSearch/",
+      tag:{ro:"cercetare · academic", en:"research · academic"},
+      tagline:{ro:"Motor de căutare academică client-side pentru lucrări de cercetare.",
+               en:"Client-side academic search engine for research papers."} }
+  ];
+
+  var EXTERNAL = [
+    { name:"TiddlyWiki", url:"https://tiddlywiki.com/",
+      tag:{ro:"wiki · notebook", en:"wiki · notebook"},
+      tagline:{ro:"Decanul genului — wiki/notebook personal, extensibil, într-un singur HTML, din 2004.",
+               en:"The genre's elder statesman — personal, extensible wiki/notebook in one HTML file since 2004."} },
+    { name:"Hyperclay", url:"https://hyperclay.com/",
+      tag:{ro:"platformă", en:"platform"},
+      tagline:{ro:"Platformă pentru HTML-uri „maleabile” care se editează și se salvează singure.",
+               en:"Platform for “malleable” HTML files that edit and save themselves."} },
+    { name:"feather.wiki", url:"https://feather.wiki/",
+      tag:{ro:"wiki · notebook", en:"wiki · notebook"},
+      tagline:{ro:"Notebook/wiki single-file, infinit extensibil, rapid.",
+               en:"Single-file notebook/wiki, infinitely extensible, fast."} },
+    { name:"Slingcode", url:"https://slingcode.net/",
+      tag:{ro:"platformă", en:"platform"},
+      tagline:{ro:"Platformă de „personal computing” într-un singur fișier HTML.",
+               en:"A personal computing platform in a single HTML file."} },
+    { name:"GitHub Topic: single-file-application", url:"https://github.com/topics/single-file-application",
+      tag:{ro:"index · auto-generat", en:"index · auto-generated"},
+      tagline:{ro:"Cel mai aproape de „tot ce există” — se actualizează automat, dar acoperă orice limbaj, nu doar HTML.",
+               en:"Closest thing to “everything that exists” — auto-updating, but covers any language, not just HTML."} },
+    { name:"awesome-single-file-apps", url:"https://github.com/nibeon/awesome-single-file-apps",
+      tag:{ro:"index · listă", en:"index · list"},
+      tagline:{ro:"Listă curatoriată pe categorii: web-dev, PHP, Python, JS, gamedev.",
+               en:"Curated list by category: web-dev, PHP, Python, JS, gamedev."} },
+    { name:"Single-File-Web-Apps", url:"https://github.com/calebmadrigal/Single-File-Web-Apps",
+      tag:{ro:"index · listă", en:"index · list"},
+      tagline:{ro:"Listă minimalistă, strict pe „.html” — puține intrări, dar exact pe definiție.",
+               en:"Minimal list, strictly “.html” — few entries, but exactly on-definition."} },
+    { name:"tools.simonwillison.net", url:"https://tools.simonwillison.net/",
+      tag:{ro:"colecție personală", en:"personal collection"},
+      tagline:{ro:"Portofoliul personal al lui Simon Willison — zeci de HTML tools, găzduite static.",
+               en:"Simon Willison's personal portfolio — dozens of HTML tools, statically hosted."} }
+  ];
+
+  var STR = {
+    ro:{
+      eyebrow:"CATALOG · SINGLE-FILE HTML · 5 IULIE 2026",
+      sub:"Aplicații single-file HTML: colecția mea, verificată direct de pe chiuta.github.io, plus tot ce am găsit relevant pe restul internetului.",
+      statOwn:"aplicații proprii", statExt:"resurse externe", statFile:"fișier, fără build", statZero:"trimis vreodată",
+      note:"Un tag e clickabil: filtrează instant pe acea categorie.",
+      hOwn:"Colecția mea", hExt:"Restul internetului",
+      countLabel:"rezultate",
+      noteOwn:"Repos publice, verificate direct din chiuta.github.io și github.com/chiuta pe 5 iulie 2026.",
+      noteExt:"Nimic din secțiunea asta nu-mi aparține. Verificate manual pe 5 iulie 2026 — nu neapărat exhaustive, genul e prea fragmentat pentru un index complet.",
+      empty:"nimic găsit — încearcă alt termen",
+      open:"Deschide", metaB:"meta ·",
+      metaText:"chiar acest fișier. Catalogul se auto-include: e tot un single-file HTML, zero dependențe, zero telemetrie, fără build. Sursa completă e mai jos, în <script>.",
+      footer:"Index fără frontiere · construit de Claude la cererea lui Alexio · ultima verificare: 5 iulie 2026",
+      placeholder:"Caută după nume, categorie…",
+      term:["OmniHost","Printre inteligențe","AI-Liber","PromptVault","TranslateHub","VoiceAtelier","FreeDetect","AcademiSearch","TiddlyWiki","Hyperclay","feather.wiki","Slingcode","…"]
+    },
+    en:{
+      eyebrow:"CATALOG · SINGLE-FILE HTML · JULY 5, 2026",
+      sub:"Single-file HTML apps: my own collection, verified straight from chiuta.github.io, plus everything relevant I found across the rest of the internet.",
+      statOwn:"own apps", statExt:"external resources", statFile:"file, no build step", statZero:"ever sent",
+      note:"A tag is clickable: filters instantly by that category.",
+      hOwn:"My collection", hExt:"The rest of the internet",
+      countLabel:"results",
+      noteOwn:"Public repos, verified straight from chiuta.github.io and github.com/chiuta on July 5, 2026.",
+      noteExt:"Nothing in this section belongs to me. Manually verified on July 5, 2026 — not necessarily exhaustive, the genre is too fragmented for a complete index.",
+      empty:"nothing found — try another term",
+      open:"Open", metaB:"meta ·",
+      metaText:"this very file. The catalog includes itself: it's a single-file HTML app too, zero dependencies, zero telemetry, no build step. Full source is below, in <script>.",
+      footer:"Index fără frontiere · built by Claude at Alexio's request · last verified: July 5, 2026",
+      placeholder:"Search by name, category…",
+      term:["OmniHost","Printre inteligențe","AI-Liber","PromptVault","TranslateHub","VoiceAtelier","FreeDetect","AcademiSearch","TiddlyWiki","Hyperclay","feather.wiki","Slingcode","…"]
+    }
+  };
+
+  var state = { lang:"ro", search:"", theme:null };
+
+  var els = {
+    eyebrow: document.getElementById("t-eyebrow"),
+    sub: document.getElementById("t-sub"),
+    statOwnLbl: document.getElementById("t-stat-own"),
+    statExtLbl: document.getElementById("t-stat-ext"),
+    statFileLbl: document.getElementById("t-stat-file"),
+    statZeroLbl: document.getElementById("t-stat-zero"),
+    note: document.getElementById("t-note"),
+    hOwn: document.getElementById("t-h-own"),
+    hExt: document.getElementById("t-h-ext"),
+    countOwnLbl: document.getElementById("t-count-own-label"),
+    countExtLbl: document.getElementById("t-count-ext-label"),
+    noteOwn: document.getElementById("t-note-own"),
+    noteExt: document.getElementById("t-note-ext"),
+    metaB: document.getElementById("t-meta-b"),
+    metaText: document.getElementById("t-meta-text"),
+    footer: document.getElementById("t-footer"),
+    search: document.getElementById("search"),
+    gridOwn: document.getElementById("grid-own"),
+    gridExt: document.getElementById("grid-ext"),
+    countOwn: document.getElementById("count-own"),
+    countExt: document.getElementById("count-ext"),
+    emptyOwn: document.getElementById("empty-own"),
+    emptyExt: document.getElementById("empty-ext"),
+    statOwnNum: document.getElementById("stat-own"),
+    statExtNum: document.getElementById("stat-ext"),
+    termText: document.getElementById("term-text"),
+    themeBtn: document.getElementById("theme-btn"),
+    langBtn: document.getElementById("lang-btn")
+  };
+
+  function makeCard(entry, kind){
+    var a = document.createElement("a");
+    a.className = "card";
+    a.dataset.kind = kind;
+    a.dataset.search = (entry.name + " " + entry.tag.ro + " " + entry.tag.en + " " +
+                         entry.tagline.ro + " " + entry.tagline.en).toLowerCase();
+    a.href = entry.url;
+    a.target = "_blank";
+    a.rel = "noopener noreferrer";
+
+    var top = document.createElement("div");
+    top.className = "card-top";
+    var glyph = document.createElement("span");
+    glyph.className = "glyph";
+    glyph.textContent = kind === "own" ? "◈" : "⌀";
+    var tag = document.createElement("span");
+    tag.className = "tag";
+    tag.textContent = entry.tag[state.lang];
+    tag.addEventListener("click", function(e){
+      e.preventDefault();
+      e.stopPropagation();
+      els.search.value = entry.tag[state.lang].split(" · ")[0];
+      state.search = els.search.value.toLowerCase();
+      filterCards();
+    });
+    top.appendChild(glyph);
+    top.appendChild(tag);
+
+    var h3 = document.createElement("h3");
+    h3.textContent = entry.name;
+
+    var p = document.createElement("p");
+    p.textContent = entry.tagline[state.lang];
+
+    var open = document.createElement("span");
+    open.className = "open";
+    var openLabel = document.createElement("span");
+    openLabel.className = "open-label";
+    openLabel.textContent = STR[state.lang].open;
+    var arrow = document.createElement("span");
+    arrow.className = "arrow";
+    arrow.setAttribute("aria-hidden", "true");
+    arrow.textContent = "→";
+    open.appendChild(openLabel);
+    open.appendChild(document.createTextNode(" "));
+    open.appendChild(arrow);
+
+    a.appendChild(top);
+    a.appendChild(h3);
+    a.appendChild(p);
+    a.appendChild(open);
+    return a;
+  }
+
+  function renderGrids(){
+    els.gridOwn.innerHTML = "";
+    els.gridExt.innerHTML = "";
+    OWN.forEach(function(entry){ els.gridOwn.appendChild(makeCard(entry, "own")); });
+    EXTERNAL.forEach(function(entry){ els.gridExt.appendChild(makeCard(entry, "ext")); });
+    filterCards();
+  }
+
+  function filterCards(){
+    var q = state.search.trim().toLowerCase();
+    var visOwn = 0, visExt = 0;
+    Array.prototype.forEach.call(els.gridOwn.children, function(card){
+      var match = !q || card.dataset.search.indexOf(q) !== -1;
+      card.style.display = match ? "" : "none";
+      if(match) visOwn++;
+    });
+    Array.prototype.forEach.call(els.gridExt.children, function(card){
+      var match = !q || card.dataset.search.indexOf(q) !== -1;
+      card.style.display = match ? "" : "none";
+      if(match) visExt++;
+    });
+    els.countOwn.textContent = visOwn;
+    els.countExt.textContent = visExt;
+    els.emptyOwn.style.display = visOwn === 0 ? "block" : "none";
+    els.emptyExt.style.display = visExt === 0 ? "block" : "none";
+  }
+
+  function renderStaticText(){
+    var s = STR[state.lang];
+    document.documentElement.lang = state.lang;
+    els.eyebrow.textContent = s.eyebrow;
+    els.sub.textContent = s.sub;
+    els.statOwnLbl.textContent = s.statOwn;
+    els.statExtLbl.textContent = s.statExt;
+    els.statFileLbl.textContent = s.statFile;
+    els.statZeroLbl.textContent = s.statZero;
+    els.note.textContent = s.note;
+    els.hOwn.textContent = s.hOwn;
+    els.hExt.textContent = s.hExt;
+    els.countOwnLbl.textContent = s.countLabel;
+    els.countExtLbl.textContent = s.countLabel;
+    els.noteOwn.textContent = s.noteOwn;
+    els.noteExt.textContent = s.noteExt;
+    els.emptyOwn.textContent = s.empty;
+    els.emptyExt.textContent = s.empty;
+    els.metaB.textContent = s.metaB;
+    els.metaText.textContent = s.metaText;
+    els.footer.textContent = s.footer;
+    els.search.placeholder = s.placeholder;
+    els.statOwnNum.textContent = OWN.length;
+    els.statExtNum.textContent = EXTERNAL.length;
+  }
+
+  function applyTheme(){
+    if(state.theme){ document.documentElement.setAttribute("data-theme", state.theme); }
+    else { document.documentElement.removeAttribute("data-theme"); }
+  }
+
+  var termIdx = 0, termTimer = null;
+  var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function tickTerminal(){
+    var list = STR[state.lang].term;
+    els.termText.textContent = list[termIdx % list.length];
+    termIdx++;
+  }
+  function startTerminal(){
+    tickTerminal();
+    if(!reduceMotion){
+      if(termTimer) clearInterval(termTimer);
+      termTimer = setInterval(tickTerminal, 2400);
+    }
+  }
+
+  els.search.addEventListener("input", function(){
+    state.search = els.search.value;
+    filterCards();
+  });
+
+  els.themeBtn.addEventListener("click", function(){
+    if(state.theme === "dark") state.theme = "light";
+    else if(state.theme === "light") state.theme = "dark";
+    else {
+      var prefersLight = window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches;
+      state.theme = prefersLight ? "dark" : "light";
+    }
+    applyTheme();
+  });
+
+  els.langBtn.addEventListener("click", function(){
+    state.lang = state.lang === "ro" ? "en" : "ro";
+    renderStaticText();
+    renderGrids();
+    startTerminal();
+  });
+
+  renderStaticText();
+  renderGrids();
+  startTerminal();
+})();
+</script>
+</body>
+</html>

@@ -4,10 +4,11 @@ const require = createRequire(process.env.PW_ROOT || import.meta.url); const {ch
 const FILE = "file://" + path.join(path.dirname(fileURLToPath(import.meta.url)), "..", "index.html");
 let ok = 0, bad = 0; const check = (n, c, x) => { if (c) { ok++; console.log("  ok   " + n); } else { bad++; console.log("  FAIL " + n + (x !== undefined ? " -> " + JSON.stringify(x) : "")); } };
 const b = await chromium.launch({executablePath: process.env.CHROMIUM_PATH || undefined, args: ["--no-sandbox"]});
-const errs = [], net = []; const ctx = await b.newContext({serviceWorkers: "block"}); await ctx.route(/^https?:/, r => { net.push(r.request().url()); r.abort(); });
+const errs = [], net = []; const ctx = await b.newContext({serviceWorkers: "block"});
+await ctx.addInitScript(() => { try { localStorage.setItem("index-fara-frontiere.lang", JSON.stringify("ro")); } catch (e) {} }); await ctx.route(/^https?:/, r => { net.push(r.request().url()); r.abort(); });
 const p = await ctx.newPage(); p.on("pageerror", e => errs.push(e.message)); await p.goto(FILE); await p.waitForTimeout(600);
 const links = await p.locator("a[href^='http']").count(); check("catalogul are cel puțin 16 linkuri", links >= 16, links);
-const ro = await p.evaluate(() => document.body.innerText); await p.click("#lang-btn"); await p.waitForTimeout(200);
+const ro = await p.evaluate(() => document.body.innerText); await p.selectOption("#langsel", "en"); await p.waitForTimeout(200);
 check("comutarea limbii schimbă textul", (await p.evaluate(() => document.body.innerText)) !== ro);
 const th = await p.evaluate(() => document.documentElement.getAttribute("data-theme")); await p.click("#theme-btn"); await p.waitForTimeout(100);
 check("comutarea temei schimbă atributul", (await p.evaluate(() => document.documentElement.getAttribute("data-theme"))) !== th);

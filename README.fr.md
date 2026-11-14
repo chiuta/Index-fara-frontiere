@@ -12,10 +12,14 @@ _Version: 1.0.0 · Dernière mise à jour: 2026-11-14_
 |---|---|---|
 | ![](docs/telefon-acasa.png) | ![](docs/telefon-en.png) | ![](docs/telefon-zi.png) |
 
+## Captures d’écran
+
+<img src="docs/screens/ro.png" alt="RO" width="110"> <img src="docs/screens/en.png" alt="EN" width="110"> <img src="docs/screens/fr.png" alt="FR" width="110"> <img src="docs/screens/de.png" alt="DE" width="110"> <img src="docs/screens/es.png" alt="ES" width="110"> <img src="docs/screens/it.png" alt="IT" width="110"> <img src="docs/screens/hu.png" alt="HU" width="110"> <img src="docs/screens/pt.png" alt="PT" width="110">
+
 ## Fonctions
 
 - Huit projets de la collection de l’auteur et huit ressources externes, clairement signalées.
-- Recherche en direct, étiquettes cliquables, bascule RO/EN, thème sombre/clair, entrée auto-référencée.
+- Recherche en direct, étiquettes cliquables, sélecteur de langue (8 langues), thème sombre/clair, entrée auto-référencée.
 - Entièrement hors ligne : aucune requête réseau, aucune télémétrie (CSP `connect-src none`).
 
 ## Utilisation
@@ -26,7 +30,7 @@ Ouvrez la page en ligne, ou téléchargez `index.html` et ouvrez-le dans un navi
 
 - Instantané statique vérifié le 5 juillet 2026 ; non mis à jour automatiquement.
 - Les entrées se trouvent dans les tableaux `OWN` et `EXTERNAL` au début du script.
-- Interface en roumain et en anglais uniquement.
+- Interface en 8 langues (RO, EN, FR, DE, ES, IT, HU, PT), au choix dans le sélecteur de l’application ; traductions assistées par machine, non relues par des locuteurs natifs.
 
 ## Confidentialité
 

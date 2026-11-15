@@ -6,7 +6,7 @@ Catalogue d’applications HTML à fichier unique : la collection de chiuta.gith
 
 **[Ouvrir l’application →](https://index-fara-frontiere.chiuta.ro/)**
 
-_Version: 1.2.0 · Dernière mise à jour: 2026-11-15_
+_Version: 1.2.1 · Dernière mise à jour: 2026-11-15_
 
 | 1 | 2 | 3 |
 |---|---|---|

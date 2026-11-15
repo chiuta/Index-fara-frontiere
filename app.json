@@ -13,8 +13,8 @@
   "storageKeys": [
     "index-fara-frontiere.lang"
   ],
-  "sizeBytes": 246026,
-  "sha256": "92e8af454a664c7dd16352edac2cd7f49ade6e118974c74fbccb8a27d4ca401a",
+  "sizeBytes": 271488,
+  "sha256": "e70e26d758697246305d58db8663aa670525b40f12a0e232f42dc6a6d0aead14",
   "csp": {
     "present": true,
     "directives": {
@@ -48,6 +48,7 @@
     },
     "modules": [
       "core",
+      "view",
       "a11y",
       "ux",
       "label"
@@ -57,6 +58,7 @@
     "version": "1.6.0",
     "modules": [
       "core",
+      "view",
       "a11y",
       "ux",
       "label"

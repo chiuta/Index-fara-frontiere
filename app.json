@@ -7,19 +7,20 @@
   "description": "Catalog single-file HTML: colecția proprie de pe chiuta.github.io, plus resursele externe relevante. Offline-first, zero dependențe, zero telemetrie, un singur fișier.",
   "egress": [],
   "permissions": [
-    "localStorage"
+    "localStorage",
+    "WebGL"
   ],
   "storageKeys": [
     "index-fara-frontiere.lang"
   ],
-  "sizeBytes": 148353,
-  "sha256": "ec8e624a3d9528206cc340a475ce3d9734c7a7cd5578051be9e2f23c11f9ff3e",
+  "sizeBytes": 200363,
+  "sha256": "c90bd5fdc8ac6bbf9f8b6e98e0fd837f0859aa50130a1c46c29c2318ce6eee9c",
   "csp": {
     "present": true,
     "directives": {
       "default-src": "'none'",
       "style-src": "'unsafe-inline'",
-      "script-src": "sha256×3",
+      "script-src": "sha256×4",
       "img-src": "'self' data:",
       "connect-src": "'none'",
       "base-uri": "'none'",

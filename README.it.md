@@ -6,7 +6,7 @@ Catalogo di app HTML a file singolo: la collezione di chiuta.github.io e risorse
 
 **[Apri l’app →](https://index-fara-frontiere.chiuta.ro/)**
 
-_Versione: 1.0.0 · Ultimo aggiornamento: 2026-11-14_
+_Versione: 1.2.0 · Ultimo aggiornamento: 2026-11-15_
 
 | 1 | 2 | 3 |
 |---|---|---|

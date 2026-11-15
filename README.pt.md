@@ -6,7 +6,7 @@ Catálogo de aplicações HTML de ficheiro único: a coleção de chiuta.github.
 
 **[Abrir a aplicação →](https://index-fara-frontiere.chiuta.ro/)**
 
-_Versão: 1.0.0 · Última atualização: 2026-11-14_
+_Versão: 1.2.0 · Última atualização: 2026-11-15_
 
 | 1 | 2 | 3 |
 |---|---|---|

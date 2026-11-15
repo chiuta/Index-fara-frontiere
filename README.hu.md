@@ -6,7 +6,7 @@ Egyfájlos HTML-alkalmazások katalógusa: a chiuta.github.io gyűjtemény és r
 
 **[Alkalmazás megnyitása →](https://index-fara-frontiere.chiuta.ro/)**
 
-_Verzió: 1.0.0 · Utolsó frissítés: 2026-11-14_
+_Verzió: 1.2.0 · Utolsó frissítés: 2026-11-15_
 
 | 1 | 2 | 3 |
 |---|---|---|

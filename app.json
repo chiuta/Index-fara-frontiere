@@ -2,7 +2,7 @@
   "schema": 1,
   "slug": "index-fara-frontiere",
   "name": "Index fără frontiere — catalog de single-file HTML apps",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "updated": "2026-11-15",
   "description": "Catalog single-file HTML: colecția proprie de pe chiuta.github.io, plus resursele externe relevante. Offline-first, zero dependențe, zero telemetrie, un singur fișier.",
   "egress": [],
@@ -13,8 +13,8 @@
   "storageKeys": [
     "index-fara-frontiere.lang"
   ],
-  "sizeBytes": 208247,
-  "sha256": "46b2315065c93ec64edb0a8c306849285448485cc3be68b52685abd26d75558c",
+  "sizeBytes": 246026,
+  "sha256": "92e8af454a664c7dd16352edac2cd7f49ade6e118974c74fbccb8a27d4ca401a",
   "csp": {
     "present": true,
     "directives": {
@@ -48,14 +48,16 @@
     },
     "modules": [
       "core",
+      "a11y",
       "ux",
       "label"
     ]
   },
   "kit": {
-    "version": "1.5.0",
+    "version": "1.6.0",
     "modules": [
       "core",
+      "a11y",
       "ux",
       "label"
     ]

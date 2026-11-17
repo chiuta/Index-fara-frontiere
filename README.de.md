@@ -6,7 +6,7 @@ Katalog von Einzeldatei-HTML-Apps: die Sammlung von chiuta.github.io plus releva
 
 **[App öffnen →](https://index-fara-frontiere.chiuta.ro/)**
 
-_Version: 1.2.1 · Letzte Aktualisierung: 2026-11-15_
+_Version: 1.2.2 · Letzte Aktualisierung: 2026-11-17_
 
 | 1 | 2 | 3 |
 |---|---|---|

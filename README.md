@@ -6,7 +6,7 @@ Catalog of single-file HTML apps: the chiuta.github.io collection plus relevant 
 
 **[Open the app →](https://index-fara-frontiere.chiuta.ro/)**
 
-_Version: 1.2.2 · Last updated: 2026-11-17_
+_Version: 1.2.3 · Last updated: 2026-11-19_
 
 | 1 | 2 | 3 |
 |---|---|---|

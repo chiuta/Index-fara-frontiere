@@ -6,7 +6,7 @@ Catalog de aplicații HTML single-file: colecția de pe chiuta.github.io plus re
 
 **[Deschide aplicația →](https://index-fara-frontiere.chiuta.ro/)**
 
-_Versiune: 1.2.2 · Ultima actualizare: 2026-11-17_
+_Versiune: 1.2.3 · Ultima actualizare: 2026-11-19_
 
 | 1 | 2 | 3 |
 |---|---|---|

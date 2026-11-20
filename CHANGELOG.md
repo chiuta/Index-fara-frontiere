@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.2.3 — 2026-11-19
+
+- La 320 px antetul depășea lățimea (346 > 320 px): sigla „◈ index fără frontiere” (fără trecere pe rând nou), selectorul de limbă și butonul de temă nu încăpeau pe același rând, iar pagina derula orizontal în toate cele 8 limbi; pe ecrane înguste (≤ 420 px) sigla poate trece pe două rânduri (constatat de bateria adversarială din 19 noiembrie 2026; verificat înainte/după: 347 → 320 px la 320 px, în toate cele 8 limbi)
+
 ## 1.2.2 — 2026-11-17
 
 - Older-browser compatibility (Chrome/Edge 55+, Firefox 52+, Safari 10.1+/iOS 10.3+): kit 1.8.0 brings the compatibility layer (fallbacks for APIs missing in old engines), and JavaScript syntax newer than ES2017 was replaced with equivalent forms where it existed; newer regular expressions and `import()` go through fallbacks. No functional changes intended. Verified with an ES2017 parser and in a simulated old engine, not on real devices.
